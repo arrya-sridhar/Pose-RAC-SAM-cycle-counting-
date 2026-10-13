@@ -4,8 +4,21 @@ This is the truth sheet for SAM-Box PoseRAC. Read it before changing anything, s
 already been tried. Add an entry for every change you make, including the ones that didn't work (template at the
 end). The README says how to run the code; this file says why it looks the way it does.
 
-All numbers below come from the stored results in `results/`, the reports in `reports/`, or the runs listed here.
-"Dev" means the 10 development videos, "edited" the 9 edited videos with uneven cycles, and "200" the full dataset.
+Where the numbers come from:
+- v5 results: the stored files in `results/`;
+- v1–v4 development runs, the palletizing video and the per-return nachi_4 analysis: run outputs kept on Arrya's
+  laptop (ask if you need them);
+- the synthetic benchmark, DREAM, baselines and MobileSAM: the mid-semester report and the PDFs in `reports/`.
+
+A few details come only from lab notes or code comments, and are marked "(notes)". Where an older note or report
+disagrees with the raw results, trust the raw results (Section 9 lists the known cases).
+
+Terms:
+- *Dev* = the 10 development videos; *edited* = the 9 edited videos with uneven cycles; *200* = the full dataset.
+- *Exact* = count exactly right; *OBO* = within one cycle.
+- *MAE* = the RepCount/PoseRAC normalised error, mean(|predicted − true| / true).
+- A *jump* = overlap (IoU) below 0.6 between consecutive outlines half a second apart.
+- *Held frames* = frames where no candidate passed the checks and the last good outline was kept.
 
 ---
 
@@ -13,12 +26,12 @@ All numbers below come from the stored results in `results/`, the reports in `re
 
 | Version | Main change | Dev (exact) | Edited (exact) | 200 videos (exact) | Code |
 | --- | --- | --- | --- | --- | --- |
-| Earlier pipeline (Abhinav) | One fixed broad box, SAM's first mask, area autocorrelation | 10/10 his own run; 9/10 our re-run | 6/9 | 83.5% (167) | re-implemented as the `abhinav` set-up in `src/run_real.py` |
+| Earlier pipeline (Abhinav) | One fixed broad box, SAM's first mask, area autocorrelation | 10/10 his own run; 9/10 our re-run | 6/9 (our re-run) | 83.5% (167; our re-run) | re-implemented as the `abhinav` set-up in `src/run_real.py` |
 | v1 | Base stitched pipeline: following box + label-free home/away counter | 5/10 | – | – | `history/run_real_v1.py` |
 | v2 | Only nearby motion widens the box; 6 candidates; continuity choice; size check | 5/6 (run on nachi_1–6 only) | – | – | `history/run_real_v2.py` |
 | v3 | Clean-up; static-region ("wall") check | 9/10 | – | – | `history/run_real_v3.py` |
 | v4 | "Changed" measured against the last accepted frame; looser size check | nachi_7 only: still wrong | – | – | `history/run_real_v4.py` |
-| **v5** | Recovery boxes after 1 s stuck; hold the last good outline | **10/10** | **9/9** | **98.5% (197)**, OBO 100% | `src/run_real.py`, git tag `v5` |
+| **v5** | Recovery boxes after 1 s stuck; hold the last good outline | **10/10** | **9/9** | **98.5% (197)**, OBO 100%, MAE 0.002 | `src/run_real.py`, git tag `v5` |
 
 The counting stage (stage 2) is the same in v1–v5. Only the tracker (stage 1) changed between versions.
 
@@ -35,10 +48,13 @@ find the repeat period. Count = video length ÷ period. It was judged on how str
 across 10 videos), which seemed unstable, so the line was set aside in favour of robot keypoints.
 
 **What we found when we checked it against the true counts.** Turned into counts, its own run was right on all 10 of
-its test videos (1–4 cycles each). The weaknesses only show up on longer videos and uneven cycles:
+its test videos (1–4 cycles each). The 10-video test was too small to show its weaknesses, which appear on the full
+dataset and on uneven cycles:
 - autocorrelation assumes every cycle has the same length and shape. On the edited videos, long waits made it count
-  2 instead of 4 (edit_1, edit_5). On the 200 videos, it is exact on only 67% of videos with 21–30 cycles, and off by
-  as much as 24;
+  2 instead of 4 (edit_1, edit_5). On the 200 videos (our re-run), it is exact on only 67% of videos with 21–30
+  cycles, and off by as much as 24;
+- it also fails some very short videos. On 4 single-cycle videos it locks onto a short false period, e.g.
+  nachi_7_seq_008 → 15 and nachi_3_seq_011 → 7. It is 89% exact on videos with 1–5 cycles;
 - the fixed box picks up strips of wall. Its outlines average 15.3% of the frame (v5: 9.1%) and jump 10,402 times over
   the 200 videos (v5: 715). On edit_7, a flickering wall panel created a false 6 s period and a count of 32 instead
   of 3.
@@ -46,7 +62,8 @@ its test videos (1–4 cycles each). The weaknesses only show up on longer video
 **Lesson:** judge a method on counts against ground truth, not on how strong a signal looks.
 
 **Before v1 (24 Sep): testing the two halves separately.**
-- *Prompt box, 9 real frames (SAM ViT-B):*
+- *Prompt box, 9 real frames (SAM ViT-B; first frames taken from the figures in the team's report, 640×360 enlarged
+  2×):*
   - a tight box gave the whole robot on 9/9 (SAM score 0.93–0.98, 8–14% of the frame);
   - a generic broad box (`[380, 0, 1120, 719]` at 1280×720) gave the wall, with a robot-shaped hole, on 9/9 (39–49% of
     the frame);
@@ -87,7 +104,7 @@ GPU (Apple M3, MPS) on 24–25 Sep 2026.
 - **Change:**
   - only movement close to the robot can widen the box (within the previous box enlarged by 50%);
   - two boxes (tight around the previous outline; previous outline plus nearby motion) × three SAM masks give 6
-    candidates;
+    candidates (3 when no nearby motion is found);
   - choice = highest `IoU(candidate, last outline) + 0.1 × SAM score`;
   - size check: 0.5–2× the median of the last 10 accepted outlines. Only plausible outlines update the tracker.
 - **Why:** the box creeping outward in v1.
@@ -96,9 +113,11 @@ GPU (Apple M3, MPS) on 24–25 Sep 2026.
 
 ### v3: clean-up and the static-region ("wall") check
 - **Change:**
-  - *Clean-up:* morphological opening (7×7 ellipse), then removal of pieces under 1,500 pixels.
+  - *Clean-up:* morphological opening (7×7 ellipse), then removal of pieces under 1,500 pixels. If nothing that big is
+    left, the raw mask is kept.
   - *Static-region check:* `u` is the fraction of a candidate lying outside both a 51×51 dilation of the last accepted
-    outline and the pixels that changed since the previous frame. The candidate is rejected if `u > 0.10`, and `u` is
+    outline and the pixels that changed since the previous frame (also dilated 51×51; from v4 on, "changed" is
+    measured against the last accepted frame). The candidate is rejected if `u > 0.10`, and `u` is
     also subtracted in the choice score (`− 2u`). The camera is fixed, so a wall panel that never changes cannot get in.
   - *Size check tightened:* 0.6–1.6× the recent median, and 0.4–2× the first-frame outline.
   - If no candidate passed, v3 output the best candidate trimmed to the allowed area (this was replaced by "hold" in v5).
@@ -124,7 +143,7 @@ GPU (Apple M3, MPS) on 24–25 Sep 2026.
 ### v5: recovery and hold (current)
 - **Change:**
   - *Recovery:* after 2 frames in a row (1 s) with no acceptable candidate, also prompt with the first-frame box and a
-    box around all motion since the last accepted frame.
+    box around all motion since the last accepted frame (up to 6 more candidates).
   - *Hold:* if nothing passes, keep the last good outline for that frame.
 - **Why:** nachi_7, where the tracker was stuck with an oversized box.
 - **Result:**
@@ -141,14 +160,20 @@ GPU (Apple M3, MPS) on 24–25 Sep 2026.
    nachi_9, which uses frame 14 because of a 7 s fade-in. `init_frame` is set in `configs/`.
 2. Otsu's method on all `d_t` of the video gives a cut-off `τ`. With `lo = τ/2` and `hi = (τ + max d)/2`, the home
    score is `p_t = clip((hi − d_t)/(hi − lo), 0, 1)`.
-3. PoseRAC's released trigger, unchanged:
-   - smoothed `s_t = 0.6 p_t + 0.4 s_{t−1}`;
-   - "home" above 0.78 and "away" below 0.4;
-   - one cycle per home → away → home trip.
-4. The last score is repeated for 1.5 s (3 frames) so that a return home at the very end of a video still counts.
+3. PoseRAC's released trigger, unchanged (`poserac.count_official`). The smoothed score is
+   `s_t = 0.6 p_t + 0.4 s_{t−1}`, starting at 0.5. There are two triggers:
+   - the *home* trigger is armed when `s > 0.78` and fires when `s` then drops below 0.4 (the robot has left home);
+   - the *away* trigger is armed when `s < 0.22` and fires when `s` then rises above 0.6 (the robot has come back).
+
+   A cycle is counted each time the away trigger fires after a home firing. So a return home counts as soon as the score
+   climbs back above 0.6, but only if the robot was properly home (above 0.78) before it last left.
+4. The reported cycle-end time is when `s` first goes above 0.78 after an away stretch.
+5. The last score is repeated for 1.5 s (3 frames) so that a return home at the very end of a video still counts.
 
 Consequences to keep in mind:
-- the robot must look "home" for about 2 frames in a row (1 s at 2 fps) to register;
+- a weak return (peak below 0.78) still counts its own cycle, but the trigger is not re-armed, so the **next** cycle is
+  lost (two cycles merge). A weak *last* return costs nothing;
+- the robot must look "home" for about 2 frames in a row (1 s at 2 fps) to reach 0.78;
 - the cut-off uses the whole video, so the counter is not online, and the result for one cycle can depend on how long
   the video is (Section 6.1).
 
@@ -161,7 +186,7 @@ Consequences to keep in mind:
 | Fixed broad box (earlier pipeline) | Wall picked up; see Section 2 | Replaced by the following box |
 | Base click or background click to rescue a broad box | Did not help ViT-B (does help MobileSAM) | Dropped |
 | SAM point prompts only (team, before this work) | Masks covered 37–72% of the frame | Dropped |
-| SAM's top-scoring mask (v1) | Slid onto the wall on 5/10 | Replaced by 6 candidates + continuity (v2) |
+| v1's tracker: box grows with any motion, SAM's top-scoring mask | Slid onto the wall on 5/10 | Replaced in v2 (box limited to nearby motion; 6 candidates + continuity) |
 | MobileSAM instead of ViT-B | About 8× faster on CPU. On tight prompts it matches ViT-B with IoU 0.63–0.91 (usually ~0.8); on broad boxes it behaves differently (2–24% of the frame). One full synthetic video counted 6/6 (outline IoU 0.97). | Not used, so results stay comparable with the team's ViT-B work. Could be revisited for speed, but re-run the regression check. |
 | Area + autocorrelation for counting | v5 outlines + autocorrelation: dev 8/10 (fails nachi_5, nachi_7), edited 7/9, 200: 83.5% | Replaced by home/away counting. Still useful as a cross-check, and it wins on a perfect loop with no pause (palletizing, 40/40). |
 | Fixed-box outlines + v5 counter | Dev 7/10, edited 7/9, 200: 70.5% | Shows both halves of v5 are needed |
@@ -176,24 +201,30 @@ Consequences to keep in mind:
 
 ## 6. Known failures and open issues
 
-### 6.1 nachi_4: the outline slowly shrinks (the 3 misses in the 200)
+### 6.1 nachi_4: a lost base plus a brief dip (the 3 misses in the 200)
 - **Videos:** nachi_4_seq_014, 016 and 018 (9, 8 and 10 cycles). Each is one short, and always at the same return (the
   6th, about 147 s in).
-- **What happens:**
+- **What happens** (recomputed from the stored outlines):
   - the reference outline covers the whole robot (8.6% of the frame);
-  - by the 2nd return home it has lost the black base (6.6%);
-  - by the 6th it has also lost the white upper arm (3.7%).
+  - during the 2nd cycle the outline loses the black base and never gets it back. From then on, its overlap with the
+    reference at each return home is about 0.76–0.77 instead of about 1 (outline about 6.6% of the frame at home);
+  - at the 6th return there is a short dip, about 4 frames (2 s), where the upper arm also drops out (3.7% of the
+    frame, overlap 0.41). The next frames are back to about 6.5%.
 
-  Overlap with the reference at home falls 1.00 → 0.76 → 0.41. At the 6th return the smoothed score peaks at 0.77,
-  just under 0.78, so two cycles merge.
-- **Why the safeguards miss it:** the tracker's only memory is the last accepted outline. The continuity choice keeps
-  picking outlines without the lost part. The static-region check blocks re-adding parts that are standing still (the
-  base never moves; every part is still while the robot rests at home). Each step of shrinkage is small, and the outline
-  bottoms out at 0.42× the reference size, just above the 0.4× limit.
+  With the base missing, every return home has little margin. The dip pushes the 6th return's smoothed peak to 0.77,
+  just under 0.78, so the trigger is not re-armed and the 6th and 7th cycles merge (Section 4).
+- **Why the safeguards miss it:**
+  - the tracker's main memory is the last accepted outline (it also uses recent sizes and, when stuck, the first-frame
+    box). The continuity choice keeps picking outlines without the base;
+  - the static-region check blocks re-adding parts that are standing still. The base never moves, so adding it back
+    looks exactly like adding a wall;
+  - the size checks don't trigger: the base loss is gradual enough, and the dip's minimum is 0.42× the reference size,
+    just above the 0.4× limit.
 - **Why only these three:**
-  - only nachi_4 drifts like this: its long-video outlines are about 20% smaller than its short-video ones, while other
-    programs stay within ±1%;
-  - videos with 6 or fewer cycles never reach the 6th return;
+  - only nachi_4 loses part of the robot like this. Its average outline size is about 15–23% smaller on long videos than
+    on short ones (more of the video comes after the loss); other programs stay within about ±1–2%;
+  - in videos with exactly 6 cycles the weak 6th return is the last one, so nothing follows it to be lost.
+    nachi_4_seq_004 peaks at 0.75 there and is still counted correctly;
   - with 14 or more cycles, the Otsu cut-off lands slightly differently and the same return just reaches 0.78.
 - The earlier pipeline gets these three right, because it only needs the repeat period.
 
@@ -205,8 +236,9 @@ Consequences to keep in mind:
   counts **1/40** at 2 fps.
   - Tracking was fine.
   - Each cycle has at most one frame that looks like home (a raw score of 1.0 in 21 of the 40 cycles). One frame later
-    the score is below 0.45, and the smoothed score never passes 0.64.
-  - Autocorrelation on v5's outlines and the earlier pipeline both get 40/40.
+    the raw score is down to about 0.46 or less, and the smoothed score never passes 0.64.
+  - Autocorrelation on v5's outlines gets 40/40. So does the earlier pipeline, run with its NACHI box coordinates
+    unchanged on this new scene.
 - **Cause:** the smoothing and hold rules are counted in frames, not seconds, combined with a narrow label-free home
   band.
 
@@ -217,7 +249,8 @@ Consequences to keep in mind:
   - 21/33 within 1 s;
   - in a tighter −1 s to +2 s window: v5 21/33, fixed-box outlines with the same counter 7/33.
 - **200 videos:**
-  - the median detected return is 1.33 s before the label, and only 16.6% are within 1 s;
+  - for each label, the nearest detected return is a median 1.33 s early, and only 16.6% are within 1 s. (A separate
+    measure, "label inside a detected home stretch, ±1 s", gives 2,650 of 2,941.);
   - 616 extra "home" stretches, all in nachi_8 and nachi_9;
   - offsets depend on the program (about +12 s for nachi_2 and −11 s for nachi_8), because a label marks where one copy
     of the recording joins the next.
@@ -258,7 +291,8 @@ be tuned to particular videos.
    3× the compute (about 20 GPU-hours for the 200 videos). Check on a fast-cycle video that was not used for tuning.
 4. **Mark the cycle end when the robot comes to rest at home,** not when it first gets close (targets 6.3).
 5. **Warning flags (they never change the count):**
-   - the overlap with the set-up outline at each return home trending down means the tracker is drifting;
+   - the overlap with the set-up outline at each return home staying well below its value at the first return means
+     the tracker has lost part of the robot (on nachi_4 it sits at about 0.77 from the 2nd return on);
    - the count disagreeing with duration ÷ autocorrelation period should be checked by a person.
 
 **Don't:**
@@ -290,7 +324,7 @@ be tuned to particular videos.
 7. **Cluster:**
    - work only in your own `$WORK` folder;
    - no heavy work on the login node (use SLURM);
-   - at most 3 GPU jobs at once;
+   - at most about 3 heavy GPU jobs at once (team guidance);
    - never modify the shared conda environments (install into `$WORK/pylib`);
    - `/scratch` is cleared after about 15 days, so copy results you want to keep into `results/<version>/` in the repo.
 
@@ -298,11 +332,18 @@ be tuned to particular videos.
 
 ## 9. Gotchas
 
-- **The counting code is duplicated.** `run_real.refdist_prob` and `run_real.counter` are used by `run_real.process`,
-  `count_video.py`, `run_batch.py` and `regression_check.py`. But `analyze_real.py` has its own copy of
-  `refdist_prob`, `evaluate.py` another one (synthetic benchmark), `analyze_edited.py` its own `home_entries`, and
-  `run_batch.home_periods` re-implements the trigger for boundary statistics. If you change stage 2, change all of
-  them, or better, make them call `run_real`.
+- **The counting code is duplicated.** If you change stage 2, change every copy, or better, make them all call
+  `run_real`:
+  - the pipeline's own path: `run_real.refdist_prob` and `run_real.counter`, used by `run_real.process`,
+    `count_video.py`, `run_batch.evaluate` and `regression_check.py`;
+  - the trigger itself (0.78 / 0.4 / momentum 0.4): `poserac.count_official` and `poserac.ActionTrigger`;
+  - `run_real.counter` also has its own departure loop with 0.6/0.4 hard-coded, and `run_real.annotated_video` its own
+    copy of the trigger (for drawing only);
+  - `analyze_real.py`: its own `refdist_prob` and `home_periods` (dev boundary statistics). `analyze_edited.py` imports
+    `analyze_real.refdist_prob` and has its own `home_entries`;
+  - `run_batch.home_periods`: re-implements the trigger for the 200-video boundary statistics;
+  - `evaluate.py`: another `refdist_prob` (synthetic benchmark). Its `otsu` is imported by `run_real` and
+    `analyze_real`, so `evaluate.py` is a live part of v5.
 - **`run_real.process` also runs the comparison methods:** the earlier pipeline's fixed box (`abhinav`, first mask),
   `abhinav_best` (top-scoring mask) and pseudo-label PoseRAC. In `results.json`, v5 is `methods.ours.labelfree_counter`.
   `run_batch.py` (200-video run) writes a different, smaller format: `methods.ours.counter`.
@@ -310,18 +351,29 @@ be tuned to particular videos.
 - **The reference frame must show the robot at home and fully visible.** If a video starts with a fade, use
   `--init_frame` (nachi_9 uses 14).
 - **Results can differ slightly between devices:**
-  - the v2 nachi_5 failure was seen on the laptop GPU (MPS);
-  - cluster and laptop gave the same count on nachi_1_seq_007, with outline IoU 0.986 (job 363873).
+  - the v2 nachi_5 failure was seen on the laptop GPU (MPS) (notes);
+  - cluster and laptop gave the same count on nachi_1_seq_007, with outline IoU 0.986 (job 363873) (notes).
 
   Compare like with like.
 - **Cluster:**
-  - start-up takes about 10 minutes (slow imports from the network home);
+  - start-up takes about 10–11 minutes: about 7 min of imports from the network home, then about 4 min of CUDA
+    initialisation (notes);
   - the cluster's ffmpeg module did not work on every node, so the scripts use the ffmpeg binary from `imageio-ffmpeg`,
-    copied to local disk;
-  - the first 200-video attempt (jobs 363890–363892) was stopped by a video-decoding problem on one node and
-    resubmitted (363905, 363906: 3 h 47 min, 6.8 GPU-hours, 0.12 s per frame).
-- **The edited set is rebuilt from a fixed seed (20260925)** by `make_edited_tests.py`; `regression_check.py prepare`
-  checks that the rebuild matches the stored ground truth. nachi_9 is excluded (fade-in at the start, ends mid-move).
+    copied to local disk (code comment);
+  - the first 200-video attempt (jobs 363890–363892) was stopped by a video-decoding problem on one node (the third job
+    was cancelled while still queued) and resubmitted (notes). The final run, jobs 363905 and 363906, took 3 h 47 min:
+    6.8 GPU-hours of processing (0.12 s per frame), about 7.6 GPU-hours allocated.
+- **The edited set is rebuilt from a fixed seed (20260925)** by `make_edited_tests.py`. `regression_check.py prepare`
+  checks that each rebuilt video has the stored cycle count and duration (not every cycle time). nachi_9 is excluded
+  (fade-in at the start, ends mid-move).
+- **Older sources that disagree with the raw data.** Trust the raw data:
+
+  | Source | Says | Raw data says |
+  | --- | --- | --- |
+  | 24 Sep report | tight box SAM score 0.96–0.98; a box 25% looser gives the wall on 9/9 | 0.93–0.98; 25–45% of the frame on 4/9 |
+  | lab notes | v5 dev held frames 10 | 9 |
+  | mid-semester report | 1,502 dev frames | 1,508 |
+  | mid-semester report | nachi_4 outline "slowly shrinks"; videos with ≤6 cycles "never reach the 6th return" | base lost once plus a brief dip; a weak last return costs nothing (Section 6.1) |
 - **PoseRAC's released code has quirks** (only relevant if you use its learned model):
   - frames in a batch attend to each other, which blurs small motions; `poserac.py` adds a per-frame mode;
   - the loss combines triplet and BCE terms with a 0.01 weight and an unusual sign;
