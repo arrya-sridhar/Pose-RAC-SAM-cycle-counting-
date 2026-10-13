@@ -1,0 +1,47 @@
+{
+ "video": "nachi_2_seq_019",
+ "job": "nachi_2",
+ "true_cycles": 5,
+ "duration_s": 127.1667,
+ "frames": 254,
+ "sam_s_per_frame": 0.151,
+ "extract_s": 4.7,
+ "reference_frame": 0,
+ "ours_held_frames": 0,
+ "methods": {
+  "abhinav": {
+   "counter": 5,
+   "autocorr": 5,
+   "autocorr_period_s": 25.5,
+   "boundary_hits": 4,
+   "boundary_extra": 0,
+   "home_entry_offsets_s": [
+    11.07,
+    11.13,
+    11.2,
+    11.27
+   ],
+   "area_pct_mean": 13.35,
+   "area_pct_max": 22.53,
+   "sudden_jumps": 42,
+   "mean_consecutive_iou": 0.731
+  },
+  "ours": {
+   "counter": 5,
+   "autocorr": 5,
+   "autocorr_period_s": 25.5,
+   "boundary_hits": 4,
+   "boundary_extra": 0,
+   "home_entry_offsets_s": [
+    11.57,
+    11.63,
+    11.7,
+    11.77
+   ],
+   "area_pct_mean": 10.06,
+   "area_pct_max": 11.29,
+   "sudden_jumps": 0,
+   "mean_consecutive_iou": 0.862
+  }
+ }
+}

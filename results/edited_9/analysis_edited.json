@@ -1,0 +1,368 @@
+[
+ {
+  "video": "edit_1",
+  "clip": "nachi_1.mp4",
+  "true": 4,
+  "speeds": [
+   0.8,
+   1.25,
+   0.8,
+   1.0
+  ],
+  "waits": [
+   8.5,
+   11.1,
+   10.0,
+   1.5
+  ],
+  "mid_stop": {
+   "cycle": 0,
+   "at_fraction": 0.68,
+   "seconds": 4.3
+  },
+  "duration": 132.0,
+  "held": 0,
+  "abhinav": {
+   "autocorr": 2,
+   "period": 70.0,
+   "counter": 4,
+   "ends_found": 4,
+   "of": 4,
+   "extra": 0,
+   "median_offset_s": -0.64,
+   "area": 12.42
+  },
+  "ours": {
+   "autocorr": 4,
+   "period": 34.5,
+   "counter": 4,
+   "ends_found": 4,
+   "of": 4,
+   "extra": 0,
+   "median_offset_s": -0.64,
+   "area": 10.29
+  }
+ },
+ {
+  "video": "edit_2",
+  "clip": "nachi_2.mp4",
+  "true": 3,
+  "speeds": [
+   1.0,
+   0.8,
+   1.0
+  ],
+  "waits": [
+   3.6,
+   8.9,
+   2.4
+  ],
+  "mid_stop": {
+   "cycle": 0,
+   "at_fraction": 0.34,
+   "seconds": 4.0
+  },
+  "duration": 101.5,
+  "held": 0,
+  "abhinav": {
+   "autocorr": 3,
+   "period": 35.0,
+   "counter": 3,
+   "ends_found": 0,
+   "of": 3,
+   "extra": 3,
+   "median_offset_s": null,
+   "area": 13.4
+  },
+  "ours": {
+   "autocorr": 3,
+   "period": 34.0,
+   "counter": 3,
+   "ends_found": 3,
+   "of": 3,
+   "extra": 0,
+   "median_offset_s": -0.55,
+   "area": 10.26
+  }
+ },
+ {
+  "video": "edit_3",
+  "clip": "nachi_3.mp4",
+  "true": 4,
+  "speeds": [
+   1.25,
+   1.0,
+   1.0,
+   0.8
+  ],
+  "waits": [
+   13.6,
+   12.3,
+   3.5,
+   2.7
+  ],
+  "mid_stop": null,
+  "duration": 165.0,
+  "held": 0,
+  "abhinav": {
+   "autocorr": 4,
+   "period": 45.0,
+   "counter": 4,
+   "ends_found": 0,
+   "of": 4,
+   "extra": 3,
+   "median_offset_s": null,
+   "area": 15.09
+  },
+  "ours": {
+   "autocorr": 4,
+   "period": 44.5,
+   "counter": 4,
+   "ends_found": 4,
+   "of": 4,
+   "extra": 0,
+   "median_offset_s": -0.09,
+   "area": 8.24
+  }
+ },
+ {
+  "video": "edit_4",
+  "clip": "nachi_4.mp4",
+  "true": 4,
+  "speeds": [
+   0.8,
+   0.8,
+   0.8,
+   1.0
+  ],
+  "waits": [
+   6.9,
+   4.2,
+   10.0,
+   1.9
+  ],
+  "mid_stop": {
+   "cycle": 3,
+   "at_fraction": 0.63,
+   "seconds": 6.6
+  },
+  "duration": 146.0,
+  "held": 1,
+  "abhinav": {
+   "autocorr": 4,
+   "period": 37.5,
+   "counter": 8,
+   "ends_found": 0,
+   "of": 4,
+   "extra": 8,
+   "median_offset_s": null,
+   "area": 13.68
+  },
+  "ours": {
+   "autocorr": 4,
+   "period": 35.5,
+   "counter": 4,
+   "ends_found": 3,
+   "of": 4,
+   "extra": 1,
+   "median_offset_s": -0.76,
+   "area": 8.48
+  }
+ },
+ {
+  "video": "edit_5",
+  "clip": "nachi_5.mp4",
+  "true": 4,
+  "speeds": [
+   1.0,
+   1.25,
+   1.25,
+   0.8
+  ],
+  "waits": [
+   12.3,
+   7.7,
+   12.9,
+   1.2
+  ],
+  "mid_stop": null,
+  "duration": 133.0,
+  "held": 6,
+  "abhinav": {
+   "autocorr": 2,
+   "period": 65.0,
+   "counter": 4,
+   "ends_found": 0,
+   "of": 4,
+   "extra": 4,
+   "median_offset_s": null,
+   "area": 13.99
+  },
+  "ours": {
+   "autocorr": 2,
+   "period": 64.0,
+   "counter": 4,
+   "ends_found": 0,
+   "of": 4,
+   "extra": 4,
+   "median_offset_s": null,
+   "area": 9.89
+  }
+ },
+ {
+  "video": "edit_6",
+  "clip": "nachi_6.mp4",
+  "true": 3,
+  "speeds": [
+   0.8,
+   0.8,
+   1.25
+  ],
+  "waits": [
+   5.3,
+   4.7,
+   2.4
+  ],
+  "mid_stop": null,
+  "duration": 111.0,
+  "held": 0,
+  "abhinav": {
+   "autocorr": 3,
+   "period": 42.5,
+   "counter": 3,
+   "ends_found": 3,
+   "of": 3,
+   "extra": 0,
+   "median_offset_s": -0.29,
+   "area": 14.71
+  },
+  "ours": {
+   "autocorr": 3,
+   "period": 41.0,
+   "counter": 3,
+   "ends_found": 3,
+   "of": 3,
+   "extra": 0,
+   "median_offset_s": -0.79,
+   "area": 8.45
+  }
+ },
+ {
+  "video": "edit_7",
+  "clip": "nachi_7.mp4",
+  "true": 3,
+  "speeds": [
+   1.0,
+   0.8,
+   1.0
+  ],
+  "waits": [
+   13.0,
+   3.5,
+   1.9
+  ],
+  "mid_stop": null,
+  "duration": 192.0,
+  "held": 7,
+  "abhinav": {
+   "autocorr": 32,
+   "period": 6.0,
+   "counter": 3,
+   "ends_found": 0,
+   "of": 3,
+   "extra": 3,
+   "median_offset_s": null,
+   "area": 15.84
+  },
+  "ours": {
+   "autocorr": 1,
+   "period": 136.5,
+   "counter": 3,
+   "ends_found": 0,
+   "of": 3,
+   "extra": 3,
+   "median_offset_s": null,
+   "area": 8.29
+  }
+ },
+ {
+  "video": "edit_8",
+  "clip": "nachi_8.mp4",
+  "true": 4,
+  "speeds": [
+   1.0,
+   1.25,
+   1.0,
+   1.0
+  ],
+  "waits": [
+   8.4,
+   10.1,
+   7.8,
+   2.8
+  ],
+  "mid_stop": null,
+  "duration": 136.5,
+  "held": 2,
+  "abhinav": {
+   "autocorr": 4,
+   "period": 36.5,
+   "counter": 3,
+   "ends_found": 0,
+   "of": 4,
+   "extra": 2,
+   "median_offset_s": null,
+   "area": 14.5
+  },
+  "ours": {
+   "autocorr": 4,
+   "period": 36.0,
+   "counter": 4,
+   "ends_found": 4,
+   "of": 4,
+   "extra": 0,
+   "median_offset_s": -0.25,
+   "area": 8.24
+  }
+ },
+ {
+  "video": "edit_10",
+  "clip": "nachi_10.mp4",
+  "true": 4,
+  "speeds": [
+   0.8,
+   0.8,
+   1.0,
+   1.25
+  ],
+  "waits": [
+   10.7,
+   6.5,
+   11.0,
+   1.5
+  ],
+  "mid_stop": null,
+  "duration": 174.5,
+  "held": 0,
+  "abhinav": {
+   "autocorr": 4,
+   "period": 41.5,
+   "counter": 4,
+   "ends_found": 0,
+   "of": 4,
+   "extra": 4,
+   "median_offset_s": null,
+   "area": 13.7
+  },
+  "ours": {
+   "autocorr": 4,
+   "period": 44.0,
+   "counter": 4,
+   "ends_found": 0,
+   "of": 4,
+   "extra": 4,
+   "median_offset_s": null,
+   "area": 8.67
+  }
+ }
+]

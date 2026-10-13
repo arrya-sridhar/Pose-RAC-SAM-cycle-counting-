@@ -1,0 +1,133 @@
+{
+ "nachi_10_seq_015": {
+  "init_box": [
+   640.0,
+   210.0,
+   984.0,
+   719.0
+  ],
+  "base_point": [
+   858.1,
+   604.0
+  ],
+  "init_frame": 0
+ },
+ "nachi_1_seq_007": {
+  "init_box": [
+   430.0,
+   180.0,
+   950.0,
+   719.0
+  ],
+  "base_point": [
+   753.8,
+   598.4
+  ],
+  "init_frame": 0
+ },
+ "nachi_2_seq_003": {
+  "init_box": [
+   596.0,
+   156.0,
+   940.0,
+   719.0
+  ],
+  "base_point": [
+   822.6,
+   592.6
+  ],
+  "init_frame": 0
+ },
+ "nachi_3_seq_003": {
+  "init_box": [
+   596.0,
+   156.0,
+   944.0,
+   719.0
+  ],
+  "base_point": [
+   823.3,
+   592.6
+  ],
+  "init_frame": 0
+ },
+ "nachi_4_seq_012": {
+  "init_box": [
+   720.0,
+   160.0,
+   950.0,
+   719.0
+  ],
+  "base_point": [
+   821.5,
+   593.5
+  ],
+  "init_frame": 0
+ },
+ "nachi_5_seq_019": {
+  "init_box": [
+   600.0,
+   156.0,
+   944.0,
+   719.0
+  ],
+  "base_point": [
+   812.8,
+   592.1
+  ],
+  "init_frame": 0
+ },
+ "nachi_6_seq_005": {
+  "init_box": [
+   636.0,
+   200.0,
+   984.0,
+   719.0
+  ],
+  "base_point": [
+   841.4,
+   601.5
+  ],
+  "init_frame": 0
+ },
+ "nachi_7_seq_008": {
+  "init_box": [
+   636.0,
+   200.0,
+   976.0,
+   719.0
+  ],
+  "base_point": [
+   845.5,
+   601.8
+  ],
+  "init_frame": 0
+ },
+ "nachi_8_seq_005": {
+  "init_box": [
+   640.0,
+   200.0,
+   984.0,
+   719.0
+  ],
+  "base_point": [
+   844.2,
+   601.6
+  ],
+  "init_frame": 0
+ },
+ "nachi_9_seq_006": {
+  "init_box": [
+   760.0,
+   220.0,
+   985.0,
+   719.0
+  ],
+  "base_point": [
+   885.0,
+   590.0
+  ],
+  "init_frame": 14,
+  "note": "recording starts with a ~6 s fade-in from an empty cell; tracking and the reference frame start at t=7.0 s"
+ }
+}

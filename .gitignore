@@ -1,0 +1,23 @@
+# model weights and data are not tracked
+src/weights/
+weights/
+data/
+*.pt
+*.pth
+*.npz
+*.mp4
+*.MP4
+frames/
+# python / os
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+# ...except the v5 outlines the regression check uses (about 14 MB)
+!results/real_10_v5/*/sam_vitb_masks.npz
+!results/edited_9/*/sam_vitb_masks.npz
+# run outputs
+slurm-*.out
+runs/
+regression_runs/
+regression_data/

@@ -1,0 +1,73 @@
+{
+ "video": "nachi_7_seq_015",
+ "job": "nachi_7",
+ "true_cycles": 18,
+ "duration_s": 960.0,
+ "frames": 1920,
+ "sam_s_per_frame": 0.153,
+ "extract_s": 20.3,
+ "reference_frame": 0,
+ "ours_held_frames": 60,
+ "methods": {
+  "abhinav": {
+   "counter": 18,
+   "autocorr": 6,
+   "autocorr_period_s": 160.0,
+   "boundary_hits": 17,
+   "boundary_extra": 0,
+   "home_entry_offsets_s": [
+    -1.33,
+    -1.67,
+    -1.5,
+    -1.33,
+    -1.67,
+    -1.5,
+    -1.33,
+    -1.67,
+    -1.5,
+    -1.33,
+    -1.67,
+    -1.5,
+    -1.33,
+    -1.67,
+    -1.5,
+    -1.33,
+    -1.67
+   ],
+   "area_pct_mean": 16.72,
+   "area_pct_max": 22.33,
+   "sudden_jumps": 6,
+   "mean_consecutive_iou": 0.886
+  },
+  "ours": {
+   "counter": 18,
+   "autocorr": 18,
+   "autocorr_period_s": 53.5,
+   "boundary_hits": 17,
+   "boundary_extra": 0,
+   "home_entry_offsets_s": [
+    -3.83,
+    -4.17,
+    -4.0,
+    -3.83,
+    -4.17,
+    -4.0,
+    -3.83,
+    -4.17,
+    -4.0,
+    -3.83,
+    -4.17,
+    -4.0,
+    -3.83,
+    -4.17,
+    -4.0,
+    -3.83,
+    -4.17
+   ],
+   "area_pct_mean": 8.22,
+   "area_pct_max": 9.43,
+   "sudden_jumps": 12,
+   "mean_consecutive_iou": 0.909
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "video_id": "edit_4",
+ "source_clip": "nachi_4.mp4",
+ "built_from": "real clip, edited (speed changes + waits)",
+ "fps": 2.0,
+ "total_duration_sec": 146.0,
+ "total_cycles": 4,
+ "cycles": [
+  {
+   "cycle_index": 1,
+   "start_time": 0.0,
+   "end_time": 30.542,
+   "speed": 0.8
+  },
+  {
+   "cycle_index": 2,
+   "start_time": 37.442,
+   "end_time": 67.983,
+   "speed": 0.8
+  },
+  {
+   "cycle_index": 3,
+   "start_time": 72.183,
+   "end_time": 102.725,
+   "speed": 0.8
+  },
+  {
+   "cycle_index": 4,
+   "start_time": 112.725,
+   "end_time": 143.758,
+   "speed": 1.0
+  }
+ ],
+ "plan": {
+  "cycles": 4,
+  "speeds": [
+   0.8,
+   0.8,
+   0.8,
+   1.0
+  ],
+  "wait_after_each_cycle_s": [
+   6.9,
+   4.2,
+   10.0,
+   1.9
+  ],
+  "mid_cycle_stop": {
+   "cycle": 3,
+   "at_fraction": 0.63,
+   "seconds": 6.6
+  }
+ },
+ "clip_duration_s": 24.433
+}

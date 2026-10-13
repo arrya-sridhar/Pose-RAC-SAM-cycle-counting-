@@ -1,0 +1,6 @@
+# extra packages for the synthetic benchmark (src/reproduce.py)
+-r requirements.txt
+pybullet
+timm
+certifi
+git+https://github.com/ChaoningZhang/MobileSAM.git

@@ -1,0 +1,47 @@
+{
+  "video_id": "nachi_9_seq_006",
+  "job_id": "nachi_9",
+  "fps": 30.0,
+  "fps_fraction": "30/1",
+  "resolution": "1920x1080",
+  "total_frames": 3876,
+  "total_duration_sec": 129.2,
+  "total_cycles": 3,
+  "is_baseline_no_freeze": false,
+  "cycles": [
+    {
+      "cycle_id": "nachi_9_seq_006_c1",
+      "cycle_index": 1,
+      "start_frame": 0,
+      "end_frame": 1292,
+      "start_time": 0.0,
+      "end_time": 43.0667,
+      "source_clip": "nachi_9.mp4",
+      "anomaly": null,
+      "defect": null
+    },
+    {
+      "cycle_id": "nachi_9_seq_006_c2",
+      "cycle_index": 2,
+      "start_frame": 1292,
+      "end_frame": 2584,
+      "start_time": 43.0667,
+      "end_time": 86.1333,
+      "source_clip": "nachi_9.mp4",
+      "anomaly": null,
+      "defect": null
+    },
+    {
+      "cycle_id": "nachi_9_seq_006_c3",
+      "cycle_index": 3,
+      "start_frame": 2584,
+      "end_frame": 3876,
+      "start_time": 86.1333,
+      "end_time": 129.2,
+      "source_clip": "nachi_9.mp4",
+      "anomaly": null,
+      "defect": null
+    }
+  ],
+  "freezes": []
+}

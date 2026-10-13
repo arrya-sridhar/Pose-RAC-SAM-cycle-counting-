@@ -1,0 +1,25 @@
+{
+  "video_id": "nachi_7_seq_008",
+  "job_id": "nachi_7",
+  "fps": 30.0,
+  "fps_fraction": "30/1",
+  "resolution": "1920x1080",
+  "total_frames": 1600,
+  "total_duration_sec": 53.3333,
+  "total_cycles": 1,
+  "is_baseline_no_freeze": false,
+  "cycles": [
+    {
+      "cycle_id": "nachi_7_seq_008_c1",
+      "cycle_index": 1,
+      "start_frame": 0,
+      "end_frame": 1600,
+      "start_time": 0.0,
+      "end_time": 53.3333,
+      "source_clip": "nachi_7.mp4",
+      "anomaly": null,
+      "defect": null
+    }
+  ],
+  "freezes": []
+}

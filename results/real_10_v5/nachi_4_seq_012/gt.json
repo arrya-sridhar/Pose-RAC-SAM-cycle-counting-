@@ -1,0 +1,58 @@
+{
+  "video_id": "nachi_4_seq_012",
+  "job_id": "nachi_4",
+  "fps": 30.0,
+  "fps_fraction": "30/1",
+  "resolution": "1920x1080",
+  "total_frames": 2936,
+  "total_duration_sec": 97.8667,
+  "total_cycles": 4,
+  "is_baseline_no_freeze": false,
+  "cycles": [
+    {
+      "cycle_id": "nachi_4_seq_012_c1",
+      "cycle_index": 1,
+      "start_frame": 0,
+      "end_frame": 734,
+      "start_time": 0.0,
+      "end_time": 24.4667,
+      "source_clip": "nachi_4.mp4",
+      "anomaly": null,
+      "defect": null
+    },
+    {
+      "cycle_id": "nachi_4_seq_012_c2",
+      "cycle_index": 2,
+      "start_frame": 734,
+      "end_frame": 1468,
+      "start_time": 24.4667,
+      "end_time": 48.9333,
+      "source_clip": "nachi_4.mp4",
+      "anomaly": null,
+      "defect": null
+    },
+    {
+      "cycle_id": "nachi_4_seq_012_c3",
+      "cycle_index": 3,
+      "start_frame": 1468,
+      "end_frame": 2202,
+      "start_time": 48.9333,
+      "end_time": 73.4,
+      "source_clip": "nachi_4.mp4",
+      "anomaly": null,
+      "defect": null
+    },
+    {
+      "cycle_id": "nachi_4_seq_012_c4",
+      "cycle_index": 4,
+      "start_frame": 2202,
+      "end_frame": 2936,
+      "start_time": 73.4,
+      "end_time": 97.8667,
+      "source_clip": "nachi_4.mp4",
+      "anomaly": null,
+      "defect": null
+    }
+  ],
+  "freezes": []
+}

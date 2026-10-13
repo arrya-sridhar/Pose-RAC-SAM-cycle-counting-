@@ -1,0 +1,152 @@
+{
+ "1": {
+  "cycles": 4,
+  "speeds": [
+   0.8,
+   1.25,
+   0.8,
+   1.0
+  ],
+  "wait_after_each_cycle_s": [
+   8.5,
+   11.1,
+   10.0,
+   1.5
+  ],
+  "mid_cycle_stop": {
+   "cycle": 0,
+   "at_fraction": 0.68,
+   "seconds": 4.3
+  }
+ },
+ "2": {
+  "cycles": 3,
+  "speeds": [
+   1.0,
+   0.8,
+   1.0
+  ],
+  "wait_after_each_cycle_s": [
+   3.6,
+   8.9,
+   2.4
+  ],
+  "mid_cycle_stop": {
+   "cycle": 0,
+   "at_fraction": 0.34,
+   "seconds": 4.0
+  }
+ },
+ "3": {
+  "cycles": 4,
+  "speeds": [
+   1.25,
+   1.0,
+   1.0,
+   0.8
+  ],
+  "wait_after_each_cycle_s": [
+   13.6,
+   12.3,
+   3.5,
+   2.7
+  ],
+  "mid_cycle_stop": null
+ },
+ "4": {
+  "cycles": 4,
+  "speeds": [
+   0.8,
+   0.8,
+   0.8,
+   1.0
+  ],
+  "wait_after_each_cycle_s": [
+   6.9,
+   4.2,
+   10.0,
+   1.9
+  ],
+  "mid_cycle_stop": {
+   "cycle": 3,
+   "at_fraction": 0.63,
+   "seconds": 6.6
+  }
+ },
+ "5": {
+  "cycles": 4,
+  "speeds": [
+   1.0,
+   1.25,
+   1.25,
+   0.8
+  ],
+  "wait_after_each_cycle_s": [
+   12.3,
+   7.7,
+   12.9,
+   1.2
+  ],
+  "mid_cycle_stop": null
+ },
+ "6": {
+  "cycles": 3,
+  "speeds": [
+   0.8,
+   0.8,
+   1.25
+  ],
+  "wait_after_each_cycle_s": [
+   5.3,
+   4.7,
+   2.4
+  ],
+  "mid_cycle_stop": null
+ },
+ "7": {
+  "cycles": 3,
+  "speeds": [
+   1.0,
+   0.8,
+   1.0
+  ],
+  "wait_after_each_cycle_s": [
+   13.0,
+   3.5,
+   1.9
+  ],
+  "mid_cycle_stop": null
+ },
+ "8": {
+  "cycles": 4,
+  "speeds": [
+   1.0,
+   1.25,
+   1.0,
+   1.0
+  ],
+  "wait_after_each_cycle_s": [
+   8.4,
+   10.1,
+   7.8,
+   2.8
+  ],
+  "mid_cycle_stop": null
+ },
+ "10": {
+  "cycles": 4,
+  "speeds": [
+   0.8,
+   0.8,
+   1.0,
+   1.25
+  ],
+  "wait_after_each_cycle_s": [
+   10.7,
+   6.5,
+   11.0,
+   1.5
+  ],
+  "mid_cycle_stop": null
+ }
+}

@@ -1,0 +1,38 @@
+videos scored: 200 of 200
+frames: 199161, true cycles: 3141
+
+method                             exact     OBO     MAE   |err|    RMSE    bias
+v5 (ours)                          0.985   1.000   0.002    0.01    0.12   -0.01
+Abhinav                            0.835   0.835   0.221    2.27    5.88   -2.00
+fixed box + our counter            0.705   0.815   0.158    2.19    5.58    1.99
+v5 outlines + autocorrelation      0.835   0.840   0.143    2.12    5.86   -2.04
+
+per job (v5 exact / Abhinav exact):
+  nachi_1   n= 20  v5 1.00 (MAE 0.000)   Abhinav 1.00 (MAE 0.000)
+  nachi_2   n= 20  v5 1.00 (MAE 0.000)   Abhinav 1.00 (MAE 0.000)
+  nachi_3   n= 20  v5 1.00 (MAE 0.000)   Abhinav 0.90 (MAE 0.339)
+  nachi_4   n= 20  v5 0.85 (MAE 0.017)   Abhinav 1.00 (MAE 0.000)
+  nachi_5   n= 20  v5 1.00 (MAE 0.000)   Abhinav 0.55 (MAE 0.229)
+  nachi_6   n= 20  v5 1.00 (MAE 0.000)   Abhinav 0.80 (MAE 0.097)
+  nachi_7   n= 20  v5 1.00 (MAE 0.000)   Abhinav 0.40 (MAE 1.067)
+  nachi_8   n= 20  v5 1.00 (MAE 0.000)   Abhinav 0.75 (MAE 0.231)
+  nachi_9   n= 20  v5 1.00 (MAE 0.000)   Abhinav 0.95 (MAE 0.250)
+  nachi_10  n= 20  v5 1.00 (MAE 0.000)   Abhinav 1.00 (MAE 0.000)
+
+per true-cycle range (v5 exact / Abhinav exact):
+  1-5    n= 36  v5 1.00   Abhinav 0.89
+  6-10   n= 32  v5 0.91   Abhinav 1.00
+  11-20  n= 60  v5 1.00   Abhinav 0.92
+  21-30  n= 72  v5 1.00   Abhinav 0.67
+
+boundaries (v5 outlines + counter): {"true_boundaries": 2941, "inside_detected_home_period": 2650, "rate": 0.9011, "extra_home_periods": 616, "median_home_entry_offset_s": -1.33, "within_1s": 0.1659}
+
+outline quality (v5 outlines): {"mean_area_pct": 9.08, "videos_with_area_over_25pct": 0, "sudden_jumps_total": 715, "mean_consecutive_iou": 0.878}
+
+boundaries (fixed-box outlines + counter): {"true_boundaries": 2941, "inside_detected_home_period": 2547, "rate": 0.866, "extra_home_periods": 899, "median_home_entry_offset_s": -0.9, "within_1s": 0.1972}
+
+outline quality (fixed-box outlines): {"mean_area_pct": 15.33, "videos_with_area_over_25pct": 0, "sudden_jumps_total": 10402, "mean_consecutive_iou": 0.826}
+
+v5 held frames: {"total": 1811, "share": 0.00909}
+
+runtime: {"mean_s_per_frame": 0.123, "gpu_hours": 6.83}

@@ -1,0 +1,128 @@
+{
+ "edit_10": {
+  "init_box": [
+   640.0,
+   210.0,
+   984.0,
+   719.0
+  ],
+  "base_point": [
+   858.1,
+   604.0
+  ],
+  "init_frame": 0,
+  "note": "same camera as nachi_10_seq_015; frame 1 = first frame of nachi_10.mp4"
+ },
+ "edit_1": {
+  "init_box": [
+   430.0,
+   180.0,
+   950.0,
+   719.0
+  ],
+  "base_point": [
+   753.8,
+   598.4
+  ],
+  "init_frame": 0,
+  "note": "same camera as nachi_1_seq_007; frame 1 = first frame of nachi_1.mp4"
+ },
+ "edit_2": {
+  "init_box": [
+   596.0,
+   156.0,
+   940.0,
+   719.0
+  ],
+  "base_point": [
+   822.6,
+   592.6
+  ],
+  "init_frame": 0,
+  "note": "same camera as nachi_2_seq_003; frame 1 = first frame of nachi_2.mp4"
+ },
+ "edit_3": {
+  "init_box": [
+   596.0,
+   156.0,
+   944.0,
+   719.0
+  ],
+  "base_point": [
+   823.3,
+   592.6
+  ],
+  "init_frame": 0,
+  "note": "same camera as nachi_3_seq_003; frame 1 = first frame of nachi_3.mp4"
+ },
+ "edit_4": {
+  "init_box": [
+   720.0,
+   160.0,
+   950.0,
+   719.0
+  ],
+  "base_point": [
+   821.5,
+   593.5
+  ],
+  "init_frame": 0,
+  "note": "same camera as nachi_4_seq_012; frame 1 = first frame of nachi_4.mp4"
+ },
+ "edit_5": {
+  "init_box": [
+   600.0,
+   156.0,
+   944.0,
+   719.0
+  ],
+  "base_point": [
+   812.8,
+   592.1
+  ],
+  "init_frame": 0,
+  "note": "same camera as nachi_5_seq_019; frame 1 = first frame of nachi_5.mp4"
+ },
+ "edit_6": {
+  "init_box": [
+   636.0,
+   200.0,
+   984.0,
+   719.0
+  ],
+  "base_point": [
+   841.4,
+   601.5
+  ],
+  "init_frame": 0,
+  "note": "same camera as nachi_6_seq_005; frame 1 = first frame of nachi_6.mp4"
+ },
+ "edit_7": {
+  "init_box": [
+   636.0,
+   200.0,
+   976.0,
+   719.0
+  ],
+  "base_point": [
+   845.5,
+   601.8
+  ],
+  "init_frame": 0,
+  "note": "same camera as nachi_7_seq_008; frame 1 = first frame of nachi_7.mp4"
+ },
+ "edit_8": {
+  "init_box": [
+   640.0,
+   200.0,
+   984.0,
+   719.0
+  ],
+  "base_point": [
+   844.2,
+   601.6
+  ],
+  "init_frame": 0,
+  "note": "same camera as nachi_8_seq_005; frame 1 = first frame of nachi_8.mp4"
+ }
+}

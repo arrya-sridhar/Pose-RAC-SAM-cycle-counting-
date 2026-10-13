@@ -1,0 +1,8 @@
+# v5 pipeline (count_video.py, run_real.py, run_batch.py, analysis scripts)
+numpy
+opencv-python
+torch
+torchvision
+segment-anything
+pytorch-metric-learning
+imageio-ffmpeg        # bundled ffmpeg for frame extraction (any system ffmpeg also works)

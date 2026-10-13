@@ -1,0 +1,36 @@
+{
+  "video_id": "nachi_8_seq_005",
+  "job_id": "nachi_8",
+  "fps": 30.0,
+  "fps_fraction": "30/1",
+  "resolution": "1920x1080",
+  "total_frames": 1692,
+  "total_duration_sec": 56.4,
+  "total_cycles": 2,
+  "is_baseline_no_freeze": false,
+  "cycles": [
+    {
+      "cycle_id": "nachi_8_seq_005_c1",
+      "cycle_index": 1,
+      "start_frame": 0,
+      "end_frame": 846,
+      "start_time": 0.0,
+      "end_time": 28.2,
+      "source_clip": "nachi_8.mp4",
+      "anomaly": null,
+      "defect": null
+    },
+    {
+      "cycle_id": "nachi_8_seq_005_c2",
+      "cycle_index": 2,
+      "start_frame": 846,
+      "end_frame": 1692,
+      "start_time": 28.2,
+      "end_time": 56.4,
+      "source_clip": "nachi_8.mp4",
+      "anomaly": null,
+      "defect": null
+    }
+  ],
+  "freezes": []
+}
