@@ -239,8 +239,19 @@ Consequences to keep in mind:
     the raw score is down to about 0.46 or less, and the smoothed score never passes 0.64.
   - Autocorrelation on v5's outlines gets 40/40. So does the earlier pipeline, run with its NACHI box coordinates
     unchanged on this new scene.
-- **Cause:** the smoothing and hold rules are counted in frames, not seconds, combined with a narrow label-free home
-  band.
+- **Cause (corrected 14 Oct 2026):** the video loops a 5.98 s clip whose last frame is far from its first. The next
+  frame jumps straight back: frame 178 is pixel-identical to frame 0, and the jump from frame 177 is about 56× a
+  normal frame-to-frame change. So the robot never moves back to its start pose on screen; the start pose exists for
+  one frame per cycle, at any frame rate. The earlier explanation (smoothing counted in frames) was wrong for this
+  video. Sampling faster does not help (v5.1, Section 10). The same construction is used in all the palletizing test
+  videos (`uniform_*`, `nonuniform_*`).
+- **Repeat timing** (autocorrelation on v5's outlines) counts the uniform video correctly (40/40) because it is
+  perfectly periodic. It fails on the non-uniform ones (2 for each of the 5-, 6-, 10- and 12-cycle videos), because the
+  speed changes from cycle to cycle.
+- The synthetic no-wait result above still stands: there the robot moves continuously through home, and 6 fps works.
+- **What would count these videos:** a counter that does not rely on a visible return, e.g. detecting the loop jump
+  itself. That is an artefact of how the videos were made, not robot behaviour, so it is not worth building into the
+  method. Better: regenerate the test videos from a clip that starts and ends at the same pose.
 
 ### 6.3 Cycle-end timing is rougher than the counts
 - **Edited set:**
@@ -287,8 +298,9 @@ be tuned to particular videos.
      doesn't fire.
 2. **Make the cut-off independent of video length** (targets 6.1, and needed for a live camera). Derive it from the
    set-up frame or a sliding window instead of Otsu on the whole video. On its own this does not fix the drift.
-3. **Define smoothing, hold and recovery in seconds rather than frames, or sample faster** (targets 6.2). 6 fps is about
-   3× the compute (about 20 GPU-hours for the 200 videos). Check on a fast-cycle video that was not used for tuning.
+3. **Define smoothing, hold and recovery in seconds rather than frames, or sample faster** (targets the synthetic
+   no-wait case in 6.2). 6 fps is about 3× the compute (about 20 GPU-hours for the 200 videos). Sampling at 6 fps was
+   tried as v5.1 (Section 10) and does **not** help the palletizing videos, whose problem is the loop jump.
 4. **Mark the cycle end when the robot comes to rest at home,** not when it first gets close (targets 6.3).
 5. **Warning flags (they never change the count):**
    - the overlap with the set-up outline at each return home staying well below its value at the first return means
@@ -398,4 +410,36 @@ Add new entries at the top of this section, using this template:
 - Decision: kept (tag) / reverted
 ```
 
-(No entries yet. v5 is the current version.)
+### v5.1 – v5 with frames sampled at 6 per second instead of 2 (Arrya, 14 Oct 2026)
+- **Change:** frame rate only (6 fps). Every rule is unchanged and still counted in frames, except the end padding,
+  which stays 1.5 s (9 frames). Script: `newtests/run_newtests.py` on the laptop (Apple M3, about 1.2 s per frame).
+- **Why:** the palletizing video failed at 2 fps (1/40), and the synthetic no-wait test had counted correctly at 6 fps.
+- **General?** Yes (frame rate only), but 3× the compute.
+- **Settings frozen before testing?** Yes. The uniform 40-cycle video motivated it; the 4 non-uniform videos were new.
+- **Regression check:** not run. It needs 6 fps frames for the 19 videos; do it as a cluster job before using v5.1 on
+  NACHI.
+- **Results (count / true):**
+
+  | Video | v5 (2 fps) | v5.1 (6 fps) |
+  | --- | --- | --- |
+  | uniform, 40 cycles | 1 / 40 | 1 / 40 |
+  | non-uniform, 5 cycles | 1 / 5 | 1 / 5 |
+  | non-uniform, 6 cycles | 1 / 6 | 1 / 6 |
+  | non-uniform, 10 cycles | 1 / 10 | 1 / 10 |
+  | non-uniform, 12 cycles | 4 / 12 | 2 / 12 |
+
+  NMAE over the 4 non-uniform videos: v5 0.800, v5.1 0.842; OBO 0% for both.
+- **Why it doesn't help:** see the corrected cause in 6.2. The clip jumps back to its start pose, so there is never a
+  visible return home to count.
+- **OP75 factory video** (real, phone camera, two robots riding an overhead rail, no ground truth), v5 at 2 fps from
+  12 s:
+  - robot A was tracked for about 5 s, then SAM merged it with the rail it rides on;
+  - robot B was tracked for about 6 s, then it slid along the rail faster than the box followed, and the outline was
+    left on the background;
+  - the camera also moves (shifts of tens to hundreds of pixels), which breaks the fixed-camera assumption;
+  - v5.1 (6 fps) on 30 s from 12 s: robot A tracked for about 7 s, then merged with the rail; robot B tracked for
+    about 14 s, then lost. Faster sampling helps the tracker follow a robot that moves quickly, but the counts are not
+    meaningful (tracking lost, moving camera, no ground truth);
+  - per-run numbers: `results/new_videos_2026-10-14/`, script and job lists: `newtests/`.
+- **Decision:** not kept as the default. Not tagged.
+

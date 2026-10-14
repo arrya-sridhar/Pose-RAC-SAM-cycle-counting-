@@ -1,0 +1,40 @@
+{
+ "name": "v51_nonuni12",
+ "version": "v5.1",
+ "video": "nonuniform_12cycles_pattern[1.0,0.6,1.6].mp4",
+ "fps": 6.0,
+ "start_s": 0,
+ "frames": 470,
+ "setup": {
+  "init_box": [
+   660.0,
+   200.0,
+   1045.0,
+   435.0
+  ],
+  "base_point": [
+   975.0,
+   400.0
+  ],
+  "init_frame": 0
+ },
+ "count": 2,
+ "departures": 2,
+ "return_home_times_s": [
+  25.67
+ ],
+ "held_frames": 0,
+ "outline_area_pct_mean": 1.79,
+ "outline_area_pct_max": 2.38,
+ "sudden_jumps": 76,
+ "s_per_frame": 1.185,
+ "runtime_s": 560.7,
+ "true_cycles": 12,
+ "nmae": 0.8333,
+ "obo": false,
+ "exact": false,
+ "ends_found": 1,
+ "ends_of": 12,
+ "ends_extra": 0,
+ "median_end_offset_s": 0.02
+}

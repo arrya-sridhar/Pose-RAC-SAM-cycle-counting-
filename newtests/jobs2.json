@@ -1,0 +1,44 @@
+[
+ {
+  "name": "v51_op75_robotA_30s",
+  "version": "v5.1",
+  "fps": 6,
+  "video": "/Users/arryasridhar/Downloads/OP75_ Trials Video 5.11.25 (1) (1).mp4",
+  "start": 12,
+  "dur": 30,
+  "setup": {
+   "init_box": [
+    425.0,
+    325.0,
+    610.0,
+    418.0
+   ],
+   "base_point": [
+    465.0,
+    385.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v51_op75_robotB_30s",
+  "version": "v5.1",
+  "fps": 6,
+  "video": "/Users/arryasridhar/Downloads/OP75_ Trials Video 5.11.25 (1) (1).mp4",
+  "start": 12,
+  "dur": 30,
+  "setup": {
+   "init_box": [
+    645.0,
+    300.0,
+    735.0,
+    380.0
+   ],
+   "base_point": [
+    705.0,
+    360.0
+   ],
+   "init_frame": 0
+  }
+ }
+]

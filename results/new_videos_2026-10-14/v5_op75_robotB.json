@@ -1,0 +1,33 @@
+{
+ "name": "v5_op75_robotB",
+ "version": "v5",
+ "video": "OP75_ Trials Video 5.11.25 (1) (1).mp4",
+ "fps": 2.0,
+ "start_s": 12,
+ "frames": 303,
+ "setup": {
+  "init_box": [
+   645.0,
+   300.0,
+   735.0,
+   380.0
+  ],
+  "base_point": [
+   705.0,
+   360.0
+  ],
+  "init_frame": 0
+ },
+ "count": 3,
+ "departures": 3,
+ "return_home_times_s": [
+  48.5,
+  78.5
+ ],
+ "held_frames": 64,
+ "outline_area_pct_mean": 0.39,
+ "outline_area_pct_max": 0.56,
+ "sudden_jumps": 85,
+ "s_per_frame": 1.188,
+ "runtime_s": 364.8
+}

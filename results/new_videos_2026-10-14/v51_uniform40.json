@@ -1,0 +1,38 @@
+{
+ "name": "v51_uniform40",
+ "version": "v5.1",
+ "video": "uniform_40cycles.mp4",
+ "fps": 6.0,
+ "start_s": 0,
+ "frames": 1434,
+ "setup": {
+  "init_box": [
+   660.0,
+   200.0,
+   1045.0,
+   435.0
+  ],
+  "base_point": [
+   975.0,
+   400.0
+  ],
+  "init_frame": 0
+ },
+ "count": 1,
+ "departures": 1,
+ "return_home_times_s": [],
+ "held_frames": 0,
+ "outline_area_pct_mean": 1.78,
+ "outline_area_pct_max": 2.29,
+ "sudden_jumps": 331,
+ "s_per_frame": 1.208,
+ "runtime_s": 1741.4,
+ "true_cycles": 40,
+ "nmae": 0.975,
+ "obo": false,
+ "exact": false,
+ "ends_found": 0,
+ "ends_of": 40,
+ "ends_extra": 0,
+ "median_end_offset_s": null
+}

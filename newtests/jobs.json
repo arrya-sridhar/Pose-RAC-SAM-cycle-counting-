@@ -1,0 +1,222 @@
+[
+ {
+  "name": "v5_nonuni5",
+  "version": "v5",
+  "fps": 2,
+  "video": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_5cycles_pattern[1.0,1.2,1.5].mp4",
+  "gt": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_5cycles_pattern[1.0,1.2,1.5]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v5_nonuni6",
+  "version": "v5",
+  "fps": 2,
+  "video": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_6cycles_pattern[1.0,0.8,1.5].mp4",
+  "gt": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_6cycles_pattern[1.0,0.8,1.5]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v5_nonuni10",
+  "version": "v5",
+  "fps": 2,
+  "video": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_10cycles_pattern[1.0,1.3,1.6].mp4",
+  "gt": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_10cycles_pattern[1.0,1.3,1.6]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v5_nonuni12",
+  "version": "v5",
+  "fps": 2,
+  "video": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_12cycles_pattern[1.0,0.6,1.6].mp4",
+  "gt": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_12cycles_pattern[1.0,0.6,1.6]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v5_op75_robotA",
+  "version": "v5",
+  "fps": 2,
+  "video": "/Users/arryasridhar/Downloads/OP75_ Trials Video 5.11.25 (1) (1).mp4",
+  "start": 12,
+  "setup": {
+   "init_box": [
+    425.0,
+    325.0,
+    610.0,
+    418.0
+   ],
+   "base_point": [
+    465.0,
+    385.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v5_op75_robotB",
+  "version": "v5",
+  "fps": 2,
+  "video": "/Users/arryasridhar/Downloads/OP75_ Trials Video 5.11.25 (1) (1).mp4",
+  "start": 12,
+  "setup": {
+   "init_box": [
+    645.0,
+    300.0,
+    735.0,
+    380.0
+   ],
+   "base_point": [
+    705.0,
+    360.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v51_nonuni5",
+  "version": "v5.1",
+  "fps": 6,
+  "video": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_5cycles_pattern[1.0,1.2,1.5].mp4",
+  "gt": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_5cycles_pattern[1.0,1.2,1.5]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v51_nonuni6",
+  "version": "v5.1",
+  "fps": 6,
+  "video": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_6cycles_pattern[1.0,0.8,1.5].mp4",
+  "gt": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_6cycles_pattern[1.0,0.8,1.5]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v51_nonuni10",
+  "version": "v5.1",
+  "fps": 6,
+  "video": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_10cycles_pattern[1.0,1.3,1.6].mp4",
+  "gt": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_10cycles_pattern[1.0,1.3,1.6]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v51_nonuni12",
+  "version": "v5.1",
+  "fps": 6,
+  "video": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_12cycles_pattern[1.0,0.6,1.6].mp4",
+  "gt": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/nonuniform/nonuniform_12cycles_pattern[1.0,0.6,1.6]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  }
+ },
+ {
+  "name": "v51_uniform40",
+  "version": "v5.1",
+  "fps": 6,
+  "video": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/uniform/uniform_40cycles.mp4",
+  "gt": "/Users/arryasridhar/Downloads/drive-download-20261014T071528Z-1-001/uniform/uniform_40cycles_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  }
+ }
+]
