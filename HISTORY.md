@@ -218,8 +218,8 @@ Consequences to keep in mind:
     box). The continuity choice keeps picking outlines without the base;
   - the static-region check blocks re-adding parts that are standing still. The base never moves, so adding it back
     looks exactly like adding a wall;
-  - the size checks don't trigger: the base loss is gradual enough, and the dip's minimum is 0.42× the reference size,
-    just above the 0.4× limit.
+  - the size checks don't trigger: the base drops out over several frames, each step small enough to pass the
+    recent-size check, and the dip's minimum is 0.42× the reference size, just above the 0.4× limit.
 - **Why only these three:**
   - only nachi_4 loses part of the robot like this. Its average outline size is about 15–23% smaller on long videos than
     on short ones (more of the video comes after the loss); other programs stay within about ±1–2%;
