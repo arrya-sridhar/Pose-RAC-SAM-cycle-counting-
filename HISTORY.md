@@ -241,8 +241,8 @@ Consequences to keep in mind:
     unchanged on this new scene.
 - **Cause (corrected 14 Oct 2026):** the video loops a 5.98 s clip whose last frame is far from its first. The next
   frame jumps straight back: frame 178 is pixel-identical to frame 0, and the jump from frame 177 is about 56× a
-  normal frame-to-frame change. So the robot never moves back to its start pose on screen; the start pose exists for
-  one frame per cycle, at any frame rate. The earlier explanation (smoothing counted in frames) was wrong for this
+  normal frame-to-frame change. So the robot never moves back to its start pose on screen: it reaches it only by the
+  jump, and has moved away again within a fraction of a second (1–2 frames at 6 fps), at any frame rate. The earlier explanation (smoothing counted in frames) was wrong for this
   video. Sampling faster does not help (v5.1, Section 10). The same construction is used in all the palletizing test
   videos (`uniform_*`, `nonuniform_*`).
 - **Repeat timing** (autocorrelation on v5's outlines) counts the uniform video correctly (40/40) because it is
