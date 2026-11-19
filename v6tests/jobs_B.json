@@ -1,0 +1,293 @@
+[
+ {
+  "name": "edited/edit_1",
+  "frames_dir": "/scratch/psaxena/arrya_v6/edited6/edit_1/frames",
+  "gt": "/scratch/psaxena/arrya_v6/edited6/edit_1/gt.json",
+  "setup": {
+   "init_box": [
+    430.0,
+    180.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    753.8,
+    598.4
+   ],
+   "init_frame": 0,
+   "note": "same camera as nachi_1_seq_007; frame 1 = first frame of nachi_1.mp4"
+  }
+ },
+ {
+  "name": "edited/edit_2",
+  "frames_dir": "/scratch/psaxena/arrya_v6/edited6/edit_2/frames",
+  "gt": "/scratch/psaxena/arrya_v6/edited6/edit_2/gt.json",
+  "setup": {
+   "init_box": [
+    596.0,
+    156.0,
+    940.0,
+    719.0
+   ],
+   "base_point": [
+    822.6,
+    592.6
+   ],
+   "init_frame": 0,
+   "note": "same camera as nachi_2_seq_003; frame 1 = first frame of nachi_2.mp4"
+  }
+ },
+ {
+  "name": "edited/edit_3",
+  "frames_dir": "/scratch/psaxena/arrya_v6/edited6/edit_3/frames",
+  "gt": "/scratch/psaxena/arrya_v6/edited6/edit_3/gt.json",
+  "setup": {
+   "init_box": [
+    596.0,
+    156.0,
+    944.0,
+    719.0
+   ],
+   "base_point": [
+    823.3,
+    592.6
+   ],
+   "init_frame": 0,
+   "note": "same camera as nachi_3_seq_003; frame 1 = first frame of nachi_3.mp4"
+  }
+ },
+ {
+  "name": "edited/edit_4",
+  "frames_dir": "/scratch/psaxena/arrya_v6/edited6/edit_4/frames",
+  "gt": "/scratch/psaxena/arrya_v6/edited6/edit_4/gt.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0,
+   "note": "same camera as nachi_4_seq_012; frame 1 = first frame of nachi_4.mp4"
+  }
+ },
+ {
+  "name": "edited/edit_5",
+  "frames_dir": "/scratch/psaxena/arrya_v6/edited6/edit_5/frames",
+  "gt": "/scratch/psaxena/arrya_v6/edited6/edit_5/gt.json",
+  "setup": {
+   "init_box": [
+    600.0,
+    156.0,
+    944.0,
+    719.0
+   ],
+   "base_point": [
+    812.8,
+    592.1
+   ],
+   "init_frame": 0,
+   "note": "same camera as nachi_5_seq_019; frame 1 = first frame of nachi_5.mp4"
+  }
+ },
+ {
+  "name": "edited/edit_6",
+  "frames_dir": "/scratch/psaxena/arrya_v6/edited6/edit_6/frames",
+  "gt": "/scratch/psaxena/arrya_v6/edited6/edit_6/gt.json",
+  "setup": {
+   "init_box": [
+    636.0,
+    200.0,
+    984.0,
+    719.0
+   ],
+   "base_point": [
+    841.4,
+    601.5
+   ],
+   "init_frame": 0,
+   "note": "same camera as nachi_6_seq_005; frame 1 = first frame of nachi_6.mp4"
+  }
+ },
+ {
+  "name": "edited/edit_7",
+  "frames_dir": "/scratch/psaxena/arrya_v6/edited6/edit_7/frames",
+  "gt": "/scratch/psaxena/arrya_v6/edited6/edit_7/gt.json",
+  "setup": {
+   "init_box": [
+    636.0,
+    200.0,
+    976.0,
+    719.0
+   ],
+   "base_point": [
+    845.5,
+    601.8
+   ],
+   "init_frame": 0,
+   "note": "same camera as nachi_7_seq_008; frame 1 = first frame of nachi_7.mp4"
+  }
+ },
+ {
+  "name": "edited/edit_8",
+  "frames_dir": "/scratch/psaxena/arrya_v6/edited6/edit_8/frames",
+  "gt": "/scratch/psaxena/arrya_v6/edited6/edit_8/gt.json",
+  "setup": {
+   "init_box": [
+    640.0,
+    200.0,
+    984.0,
+    719.0
+   ],
+   "base_point": [
+    844.2,
+    601.6
+   ],
+   "init_frame": 0,
+   "note": "same camera as nachi_8_seq_005; frame 1 = first frame of nachi_8.mp4"
+  }
+ },
+ {
+  "name": "edited/edit_10",
+  "frames_dir": "/scratch/psaxena/arrya_v6/edited6/edit_10/frames",
+  "gt": "/scratch/psaxena/arrya_v6/edited6/edit_10/gt.json",
+  "setup": {
+   "init_box": [
+    640.0,
+    210.0,
+    984.0,
+    719.0
+   ],
+   "base_point": [
+    858.1,
+    604.0
+   ],
+   "init_frame": 0,
+   "note": "same camera as nachi_10_seq_015; frame 1 = first frame of nachi_10.mp4"
+  }
+ },
+ {
+  "name": "sim/nonuni5",
+  "video": "/scratch/psaxena/arrya_v6/newvideos/nonuniform_5cycles_pattern[1.0,1.2,1.5].mp4",
+  "gt": "/scratch/psaxena/arrya_v6/newvideos/nonuniform_5cycles_pattern[1.0,1.2,1.5]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/sim_nonuni5",
+  "cfg": {}
+ },
+ {
+  "name": "sim/nonuni6",
+  "video": "/scratch/psaxena/arrya_v6/newvideos/nonuniform_6cycles_pattern[1.0,0.8,1.5].mp4",
+  "gt": "/scratch/psaxena/arrya_v6/newvideos/nonuniform_6cycles_pattern[1.0,0.8,1.5]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/sim_nonuni6",
+  "cfg": {}
+ },
+ {
+  "name": "sim/nonuni10",
+  "video": "/scratch/psaxena/arrya_v6/newvideos/nonuniform_10cycles_pattern[1.0,1.3,1.6].mp4",
+  "gt": "/scratch/psaxena/arrya_v6/newvideos/nonuniform_10cycles_pattern[1.0,1.3,1.6]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/sim_nonuni10",
+  "cfg": {}
+ },
+ {
+  "name": "sim/nonuni12",
+  "video": "/scratch/psaxena/arrya_v6/newvideos/nonuniform_12cycles_pattern[1.0,0.6,1.6].mp4",
+  "gt": "/scratch/psaxena/arrya_v6/newvideos/nonuniform_12cycles_pattern[1.0,0.6,1.6]_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/sim_nonuni12",
+  "cfg": {}
+ },
+ {
+  "name": "sim/uniform40",
+  "video": "/scratch/psaxena/arrya_v6/newvideos/uniform_40cycles.mp4",
+  "gt": "/scratch/psaxena/arrya_v6/newvideos/uniform_40cycles_gt.json",
+  "setup": {
+   "init_box": [
+    660.0,
+    200.0,
+    1045.0,
+    435.0
+   ],
+   "base_point": [
+    975.0,
+    400.0
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/sim_uniform40",
+  "cfg": {}
+ },
+ {
+  "name": "op75/robotB_30s",
+  "video": "/scratch/psaxena/arrya_v6/newvideos/OP75_ Trials Video 5.11.25 (1) (1).mp4",
+  "setup": {
+   "init_box": [
+    645.0,
+    300.0,
+    735.0,
+    380.0
+   ],
+   "base_point": [
+    705.0,
+    360.0
+   ],
+   "init_frame": 0
+  },
+  "start": 12,
+  "dur": 30,
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/op75_robotB_30s"
+ }
+]

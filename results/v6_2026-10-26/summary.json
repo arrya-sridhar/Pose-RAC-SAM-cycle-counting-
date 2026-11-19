@@ -1,0 +1,1414 @@
+{
+ "runs": {
+  "ablation/nachi_4_seq_014_memory_only": {
+   "count": 9,
+   "true": 9,
+   "exact": true,
+   "frames_processed": 441,
+   "v5_frames": 441,
+   "frames_by_level": [
+    441,
+    0,
+    0
+   ],
+   "fast_time_share": 0.0,
+   "held": 0,
+   "flags": [
+    "count 9 disagrees with duration / repeat period (2, period 98.0 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.999,
+    0.998,
+    0.992,
+    0.99,
+    0.991,
+    0.99,
+    0.989,
+    0.988,
+    0.973
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    71.0,
+    95.5,
+    120.5,
+    144.0,
+    168.5,
+    193.0,
+    218.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 8
+  },
+  "ablation/nachi_4_seq_014_rate_only": {
+   "count": 9,
+   "true": 9,
+   "exact": true,
+   "frames_processed": 460,
+   "v5_frames": 441,
+   "frames_by_level": [
+    436,
+    14,
+    10
+   ],
+   "fast_time_share": 0.015,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.96,
+    0.961,
+    0.968,
+    0.967,
+    0.967,
+    0.967,
+    0.966,
+    0.968
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    70.5,
+    95.0,
+    119.5,
+    144.0,
+    168.5,
+    193.0
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 8
+  },
+  "ablation/nachi_4_seq_016_memory_only": {
+   "count": 8,
+   "true": 8,
+   "exact": true,
+   "frames_processed": 392,
+   "v5_frames": 392,
+   "frames_by_level": [
+    392,
+    0,
+    0
+   ],
+   "fast_time_share": 0.0,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.999,
+    0.998,
+    0.992,
+    0.99,
+    0.991,
+    0.99,
+    0.989,
+    0.972
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    71.0,
+    95.5,
+    120.5,
+    144.0,
+    168.5,
+    193.0
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 7
+  },
+  "ablation/nachi_4_seq_016_rate_only": {
+   "count": 8,
+   "true": 8,
+   "exact": true,
+   "frames_processed": 398,
+   "v5_frames": 392,
+   "frames_by_level": [
+    389,
+    9,
+    0
+   ],
+   "fast_time_share": 0.009,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.961,
+    0.961,
+    0.968,
+    0.967,
+    0.967,
+    0.967,
+    0.966,
+    0.962
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    71.0,
+    95.5,
+    120.0,
+    144.5,
+    169.0,
+    193.0
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 7
+  },
+  "ablation/nachi_4_seq_018_memory_only": {
+   "count": 10,
+   "true": 10,
+   "exact": true,
+   "frames_processed": 490,
+   "v5_frames": 490,
+   "frames_by_level": [
+    490,
+    0,
+    0
+   ],
+   "fast_time_share": 0.0,
+   "held": 0,
+   "flags": [
+    "count 10 disagrees with duration / repeat period (2, period 98.0 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.999,
+    0.998,
+    0.992,
+    0.99,
+    0.991,
+    0.99,
+    0.989,
+    0.988,
+    0.989,
+    0.972
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    71.0,
+    95.5,
+    120.5,
+    144.0,
+    168.5,
+    193.0,
+    218.5,
+    242.0
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 9
+  },
+  "ablation/nachi_4_seq_018_rate_only": {
+   "count": 11,
+   "true": 10,
+   "exact": false,
+   "frames_processed": 556,
+   "v5_frames": 490,
+   "frames_by_level": [
+    477,
+    29,
+    50
+   ],
+   "fast_time_share": 0.031,
+   "held": 0,
+   "flags": [
+    "outline at home smaller than at the first return (overlap 0.74 vs 0.96): part of the robot may have been lost"
+   ],
+   "home_overlap_at_returns": [
+    0.96,
+    0.961,
+    0.968,
+    0.967,
+    0.967,
+    0.967,
+    0.966,
+    0.968,
+    0.748,
+    0.74,
+    0.977
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    70.5,
+    95.0,
+    119.5,
+    144.0,
+    168.5,
+    193.0,
+    219.17,
+    220.83,
+    243.33
+   ],
+   "ends_within_1s": 1,
+   "ends_at_rest_within_1s": 1,
+   "ends_of": 9
+  },
+  "dev/nachi_10_seq_015": {
+   "count": 2,
+   "true": 2,
+   "exact": true,
+   "frames_processed": 153,
+   "v5_frames": 135,
+   "frames_by_level": [
+    126,
+    27,
+    0
+   ],
+   "fast_time_share": 0.077,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.987,
+    0.987
+   ],
+   "returns_s": [
+    31.0,
+    65.0
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 1
+  },
+  "dev/nachi_1_seq_007": {
+   "count": 2,
+   "true": 2,
+   "exact": true,
+   "frames_processed": 117,
+   "v5_frames": 90,
+   "frames_by_level": [
+    77,
+    40,
+    0
+   ],
+   "fast_time_share": 0.17,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.992,
+    0.977
+   ],
+   "returns_s": [
+    21.5,
+    44.0
+   ],
+   "ends_within_1s": 1,
+   "ends_at_rest_within_1s": 1,
+   "ends_of": 1
+  },
+  "dev/nachi_2_seq_003": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 251,
+   "v5_frames": 204,
+   "frames_by_level": [
+    181,
+    70,
+    0
+   ],
+   "fast_time_share": 0.131,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.739,
+    0.739,
+    0.739,
+    0.731
+   ],
+   "returns_s": [
+    12.5,
+    37.5,
+    63.0,
+    88.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 3
+  },
+  "dev/nachi_3_seq_003": {
+   "count": 2,
+   "true": 2,
+   "exact": true,
+   "frames_processed": 140,
+   "v5_frames": 132,
+   "frames_by_level": [
+    128,
+    12,
+    0
+   ],
+   "fast_time_share": 0.035,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.999,
+    0.985
+   ],
+   "returns_s": [
+    31.5,
+    64.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 1,
+   "ends_of": 1
+  },
+  "dev/nachi_4_seq_012": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 196,
+   "v5_frames": 196,
+   "frames_by_level": [
+    196,
+    0,
+    0
+   ],
+   "fast_time_share": 0.0,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.999,
+    0.998,
+    0.992,
+    0.972
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    71.0,
+    95.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 3
+  },
+  "dev/nachi_5_seq_019": {
+   "count": 2,
+   "true": 2,
+   "exact": true,
+   "frames_processed": 131,
+   "v5_frames": 103,
+   "frames_by_level": [
+    89,
+    42,
+    0
+   ],
+   "fast_time_share": 0.162,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.854,
+    0.861
+   ],
+   "returns_s": [
+    21.5,
+    47.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 1
+  },
+  "dev/nachi_6_seq_005": {
+   "count": 3,
+   "true": 3,
+   "exact": true,
+   "frames_processed": 222,
+   "v5_frames": 173,
+   "frames_by_level": [
+    149,
+    73,
+    0
+   ],
+   "fast_time_share": 0.156,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.971,
+    0.957,
+    0.96
+   ],
+   "returns_s": [
+    27.67,
+    56.5,
+    85.17
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 2,
+   "ends_of": 2
+  },
+  "dev/nachi_7_seq_008": {
+   "count": 1,
+   "true": 1,
+   "exact": true,
+   "frames_processed": 121,
+   "v5_frames": 107,
+   "frames_by_level": [
+    100,
+    21,
+    0
+   ],
+   "fast_time_share": 0.078,
+   "held": 0,
+   "flags": [
+    "count 1 disagrees with duration / repeat period (4, period 13.0 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.987
+   ],
+   "returns_s": [
+    50.0
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 0
+  },
+  "dev/nachi_8_seq_005": {
+   "count": 2,
+   "true": 2,
+   "exact": true,
+   "frames_processed": 145,
+   "v5_frames": 113,
+   "frames_by_level": [
+    98,
+    47,
+    0
+   ],
+   "fast_time_share": 0.155,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.962,
+    0.901
+   ],
+   "returns_s": [
+    27.17,
+    55.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 1,
+   "ends_of": 1
+  },
+  "dev/nachi_9_seq_006": {
+   "count": 3,
+   "true": 3,
+   "exact": true,
+   "frames_processed": 347,
+   "v5_frames": 259,
+   "frames_by_level": [
+    239,
+    48,
+    60
+   ],
+   "fast_time_share": 0.09,
+   "held": 0,
+   "flags": [
+    "count 3 disagrees with duration / repeat period (1, period 86.5 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.799,
+    0.799,
+    0.794
+   ],
+   "returns_s": [
+    43.1,
+    86.17,
+    126.33
+   ],
+   "ends_within_1s": 2,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 2
+  },
+  "edited/edit_1": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 314,
+   "v5_frames": 264,
+   "frames_by_level": [
+    239,
+    75,
+    0
+   ],
+   "fast_time_share": 0.11,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.982,
+    0.982,
+    0.982,
+    0.982
+   ],
+   "returns_s": [
+    31.5,
+    58.0,
+    97.0,
+    129.5
+   ],
+   "ends_within_1s": 3,
+   "ends_at_rest_within_1s": 3,
+   "ends_of": 3
+  },
+  "edited/edit_10": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 383,
+   "v5_frames": 349,
+   "frames_by_level": [
+    332,
+    51,
+    0
+   ],
+   "fast_time_share": 0.056,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.989,
+    0.989,
+    0.989,
+    0.99
+   ],
+   "returns_s": [
+    39.0,
+    92.5,
+    132.5,
+    171.0
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 3
+  },
+  "edited/edit_2": {
+   "count": 3,
+   "true": 3,
+   "exact": true,
+   "frames_processed": 233,
+   "v5_frames": 203,
+   "frames_by_level": [
+    188,
+    45,
+    0
+   ],
+   "fast_time_share": 0.087,
+   "held": 0,
+   "flags": [
+    "count 3 disagrees with duration / repeat period (6, period 18.0 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.99,
+    0.988,
+    0.99
+   ],
+   "returns_s": [
+    28.67,
+    64.0,
+    98.33
+   ],
+   "ends_within_1s": 2,
+   "ends_at_rest_within_1s": 2,
+   "ends_of": 2
+  },
+  "edited/edit_3": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 344,
+   "v5_frames": 330,
+   "frames_by_level": [
+    323,
+    21,
+    0
+   ],
+   "fast_time_share": 0.025,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.986,
+    0.986,
+    0.986,
+    0.986
+   ],
+   "returns_s": [
+    25.83,
+    72.0,
+    117.17,
+    161.5
+   ],
+   "ends_within_1s": 3,
+   "ends_at_rest_within_1s": 3,
+   "ends_of": 3
+  },
+  "edited/edit_4": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 342,
+   "v5_frames": 292,
+   "frames_by_level": [
+    283,
+    19,
+    40
+   ],
+   "fast_time_share": 0.036,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.977,
+    0.977,
+    0.977,
+    0.977
+   ],
+   "returns_s": [
+    27.5,
+    66.17,
+    100.83,
+    141.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 3
+  },
+  "edited/edit_5": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 334,
+   "v5_frames": 266,
+   "frames_by_level": [
+    232,
+    102,
+    0
+   ],
+   "fast_time_share": 0.15,
+   "held": 0,
+   "flags": [
+    "count 4 disagrees with duration / repeat period (2, period 64.5 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.97,
+    0.969,
+    0.969,
+    0.97
+   ],
+   "returns_s": [
+    24.0,
+    57.5,
+    85.5,
+    130.0
+   ],
+   "ends_within_1s": 1,
+   "ends_at_rest_within_1s": 1,
+   "ends_of": 3
+  },
+  "edited/edit_6": {
+   "count": 3,
+   "true": 3,
+   "exact": true,
+   "frames_processed": 250,
+   "v5_frames": 222,
+   "frames_by_level": [
+    208,
+    42,
+    0
+   ],
+   "fast_time_share": 0.072,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.961,
+    0.958,
+    0.954
+   ],
+   "returns_s": [
+    36.5,
+    79.0,
+    107.83
+   ],
+   "ends_within_1s": 2,
+   "ends_at_rest_within_1s": 2,
+   "ends_of": 2
+  },
+  "edited/edit_7": {
+   "count": 3,
+   "true": 3,
+   "exact": true,
+   "frames_processed": 442,
+   "v5_frames": 384,
+   "frames_by_level": [
+    355,
+    87,
+    0
+   ],
+   "fast_time_share": 0.088,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.988,
+    0.842,
+    0.989
+   ],
+   "returns_s": [
+    50.0,
+    128.5,
+    186.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 2
+  },
+  "edited/edit_8": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 343,
+   "v5_frames": 273,
+   "frames_by_level": [
+    238,
+    105,
+    0
+   ],
+   "fast_time_share": 0.148,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.9,
+    0.901,
+    0.9,
+    0.9
+   ],
+   "returns_s": [
+    27.5,
+    58.5,
+    96.67,
+    132.67
+   ],
+   "ends_within_1s": 3,
+   "ends_at_rest_within_1s": 3,
+   "ends_of": 3
+  },
+  "nachi4/nachi_4_seq_014": {
+   "count": 9,
+   "true": 9,
+   "exact": true,
+   "frames_processed": 472,
+   "v5_frames": 441,
+   "frames_by_level": [
+    434,
+    18,
+    20
+   ],
+   "fast_time_share": 0.02,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.999,
+    0.998,
+    0.992,
+    0.99,
+    0.991,
+    0.99,
+    0.989,
+    0.988,
+    0.975
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    71.0,
+    95.5,
+    120.0,
+    144.5,
+    168.5,
+    193.0,
+    218.63
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 8
+  },
+  "nachi4/nachi_4_seq_016": {
+   "count": 8,
+   "true": 8,
+   "exact": true,
+   "frames_processed": 398,
+   "v5_frames": 392,
+   "frames_by_level": [
+    389,
+    9,
+    0
+   ],
+   "fast_time_share": 0.009,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.999,
+    0.998,
+    0.992,
+    0.99,
+    0.991,
+    0.99,
+    0.989,
+    0.972
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    71.0,
+    95.5,
+    120.0,
+    144.5,
+    169.0,
+    193.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 7
+  },
+  "nachi4/nachi_4_seq_018": {
+   "count": 10,
+   "true": 10,
+   "exact": true,
+   "frames_processed": 522,
+   "v5_frames": 490,
+   "frames_by_level": [
+    482,
+    20,
+    20
+   ],
+   "fast_time_share": 0.019,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.999,
+    0.998,
+    0.992,
+    0.99,
+    0.991,
+    0.99,
+    0.989,
+    0.988,
+    0.99,
+    0.972
+   ],
+   "returns_s": [
+    22.0,
+    46.5,
+    71.0,
+    95.5,
+    120.0,
+    144.5,
+    168.5,
+    193.0,
+    218.63,
+    242.0
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 9
+  },
+  "op75/robotB_30s": {
+   "count": 0,
+   "true": null,
+   "exact": null,
+   "frames_processed": 166,
+   "v5_frames": 60,
+   "frames_by_level": [
+    27,
+    89,
+    50
+   ],
+   "fast_time_share": 0.599,
+   "held": 14,
+   "flags": [
+    "8% of frames held (no acceptable outline): tracking unreliable"
+   ],
+   "home_overlap_at_returns": [],
+   "returns_s": [],
+   "ends_within_1s": null,
+   "ends_at_rest_within_1s": null,
+   "ends_of": null
+  },
+  "sim/nonuni10": {
+   "count": 9,
+   "true": 10,
+   "exact": false,
+   "frames_processed": 430,
+   "v5_frames": 98,
+   "frames_by_level": [
+    13,
+    217,
+    200
+   ],
+   "fast_time_share": 0.925,
+   "held": 0,
+   "flags": [
+    "outline at home smaller than at the first return (overlap 0.77 vs 0.91): part of the robot may have been lost",
+    "count 9 disagrees with duration / repeat period (3, period 14.5 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.91,
+    0.909,
+    0.91,
+    0.91,
+    0.772,
+    0.91,
+    0.774,
+    0.909,
+    0.772
+   ],
+   "returns_s": [
+    6.0,
+    10.63,
+    14.4,
+    20.33,
+    24.97,
+    28.73,
+    34.67,
+    39.3,
+    43.07
+   ],
+   "ends_within_1s": 9,
+   "ends_at_rest_within_1s": 3,
+   "ends_of": 9
+  },
+  "sim/nonuni12": {
+   "count": 11,
+   "true": 12,
+   "exact": false,
+   "frames_processed": 586,
+   "v5_frames": 157,
+   "frames_by_level": [
+    39,
+    307,
+    240
+   ],
+   "fast_time_share": 0.792,
+   "held": 1,
+   "flags": [
+    "count 11 disagrees with duration / repeat period (4, period 19.5 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.903,
+    0.772,
+    0.91,
+    0.902,
+    0.909,
+    0.91,
+    0.903,
+    0.909,
+    0.772,
+    0.903,
+    0.772
+   ],
+   "returns_s": [
+    6.0,
+    15.87,
+    19.63,
+    25.57,
+    35.43,
+    39.2,
+    45.13,
+    55.0,
+    58.77,
+    64.7,
+    74.57
+   ],
+   "ends_within_1s": 11,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 11
+  },
+  "sim/nonuni5": {
+   "count": 4,
+   "true": 5,
+   "exact": false,
+   "frames_processed": 232,
+   "v5_frames": 52,
+   "frames_by_level": [
+    7,
+    115,
+    110
+   ],
+   "fast_time_share": 0.953,
+   "held": 0,
+   "flags": [
+    "outline at home smaller than at the first return (overlap 0.77 vs 0.91): part of the robot may have been lost",
+    "count 4 disagrees with duration / repeat period (2, period 15.0 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.911,
+    0.902,
+    0.91,
+    0.773
+   ],
+   "returns_s": [
+    6.0,
+    11.0,
+    15.03,
+    20.97
+   ],
+   "ends_within_1s": 4,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 4
+  },
+  "sim/nonuni6": {
+   "count": 5,
+   "true": 6,
+   "exact": false,
+   "frames_processed": 279,
+   "v5_frames": 70,
+   "frames_by_level": [
+    14,
+    145,
+    120
+   ],
+   "fast_time_share": 0.852,
+   "held": 0,
+   "flags": [
+    "outline at home smaller than at the first return (overlap 0.77 vs 0.91): part of the robot may have been lost",
+    "count 5 disagrees with duration / repeat period (2, period 17.5 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.906,
+    0.902,
+    0.91,
+    0.77,
+    0.767
+   ],
+   "returns_s": [
+    6.0,
+    13.4,
+    17.43,
+    23.37,
+    30.77
+   ],
+   "ends_within_1s": 5,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 5
+  },
+  "sim/uniform40": {
+   "count": 39,
+   "true": 40,
+   "exact": false,
+   "frames_processed": 1893,
+   "v5_frames": 479,
+   "frames_by_level": [
+    92,
+    1001,
+    800
+   ],
+   "fast_time_share": 0.866,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.772,
+    0.91,
+    0.91,
+    0.772,
+    0.772,
+    0.91,
+    0.91,
+    0.91,
+    0.772,
+    0.91,
+    0.91,
+    0.91,
+    0.772,
+    0.91,
+    0.91,
+    0.91,
+    0.772,
+    0.91,
+    0.91,
+    0.91,
+    0.772,
+    0.91,
+    0.91,
+    0.91,
+    0.772,
+    0.772,
+    0.91,
+    0.91,
+    0.772,
+    0.772,
+    0.91,
+    0.91,
+    0.91,
+    0.772,
+    0.91,
+    0.91,
+    0.91,
+    0.772,
+    0.91
+   ],
+   "returns_s": [
+    6.07,
+    12.03,
+    18.0,
+    23.97,
+    29.97,
+    35.93,
+    41.9,
+    47.9,
+    53.87,
+    59.83,
+    65.8,
+    71.8,
+    77.77,
+    83.73,
+    89.7,
+    95.7,
+    101.67,
+    107.63,
+    113.63,
+    119.6,
+    125.57,
+    131.53,
+    137.53,
+    143.5,
+    149.47,
+    155.47,
+    161.43,
+    167.4,
+    173.37,
+    179.37,
+    185.33,
+    191.3,
+    197.3,
+    203.27,
+    209.23,
+    215.2,
+    221.2,
+    227.17,
+    233.13
+   ],
+   "ends_within_1s": 39,
+   "ends_at_rest_within_1s": 0,
+   "ends_of": 39
+  },
+  "stress/nachi_2_seq_003_memory_off": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 204,
+   "v5_frames": 204,
+   "frames_by_level": [
+    204,
+    0,
+    0
+   ],
+   "fast_time_share": 0.0,
+   "held": 0,
+   "flags": [
+    "count 4 disagrees with duration / repeat period (12, period 8.5 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.728,
+    0.818,
+    0.81,
+    0.974
+   ],
+   "returns_s": [
+    12.0,
+    50.5,
+    76.0,
+    100.0
+   ],
+   "ends_within_1s": 2,
+   "ends_at_rest_within_1s": 2,
+   "ends_of": 3
+  },
+  "stress/nachi_2_seq_003_memory_on": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 204,
+   "v5_frames": 204,
+   "frames_by_level": [
+    204,
+    0,
+    0
+   ],
+   "fast_time_share": 0.0,
+   "held": 0,
+   "flags": [
+    "count 4 disagrees with duration / repeat period (8, period 12.5 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.998,
+    0.991,
+    0.979,
+    0.982
+   ],
+   "returns_s": [
+    24.5,
+    50.5,
+    75.5,
+    101.0
+   ],
+   "ends_within_1s": 3,
+   "ends_at_rest_within_1s": 3,
+   "ends_of": 3
+  },
+  "stress/nachi_4_seq_012_memory_off": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 196,
+   "v5_frames": 196,
+   "frames_by_level": [
+    196,
+    0,
+    0
+   ],
+   "fast_time_share": 0.0,
+   "held": 1,
+   "flags": [
+    "outline at home smaller than at the first return (overlap 0.72 vs 0.96): part of the robot may have been lost",
+    "count 4 disagrees with duration / repeat period (10, period 10.0 s): check by eye"
+   ],
+   "home_overlap_at_returns": [
+    0.961,
+    0.771,
+    0.751,
+    0.719
+   ],
+   "returns_s": [
+    21.5,
+    48.5,
+    74.0,
+    96.5
+   ],
+   "ends_within_1s": 2,
+   "ends_at_rest_within_1s": 2,
+   "ends_of": 3
+  },
+  "stress/nachi_4_seq_012_memory_on": {
+   "count": 4,
+   "true": 4,
+   "exact": true,
+   "frames_processed": 196,
+   "v5_frames": 196,
+   "frames_by_level": [
+    196,
+    0,
+    0
+   ],
+   "fast_time_share": 0.0,
+   "held": 0,
+   "flags": [],
+   "home_overlap_at_returns": [
+    0.999,
+    0.998,
+    0.992,
+    0.972
+   ],
+   "returns_s": [
+    22.0,
+    47.0,
+    71.0,
+    95.5
+   ],
+   "ends_within_1s": 0,
+   "ends_at_rest_within_1s": 1,
+   "ends_of": 3
+  }
+ },
+ "recount_200": {
+  "videos": 200,
+  "v6_counter_matches_v5": 200,
+  "exact_v5": 197,
+  "exact_window": 195,
+  "window_changed": [
+   [
+    "nachi_4_seq_014",
+    9,
+    8,
+    9
+   ],
+   [
+    "nachi_4_seq_016",
+    8,
+    7,
+    8
+   ],
+   [
+    "nachi_4_seq_018",
+    10,
+    9,
+    10
+   ],
+   [
+    "nachi_8_seq_004",
+    29,
+    29,
+    30
+   ],
+   [
+    "nachi_8_seq_007",
+    9,
+    9,
+    10
+   ],
+   [
+    "nachi_8_seq_013",
+    4,
+    4,
+    5
+   ],
+   [
+    "nachi_8_seq_015",
+    19,
+    19,
+    20
+   ],
+   [
+    "nachi_8_seq_019",
+    24,
+    24,
+    25
+   ]
+  ],
+  "flagged_count": 51,
+  "v5_misses": [
+   "nachi_4_seq_014",
+   "nachi_4_seq_016",
+   "nachi_4_seq_018"
+  ],
+  "misses_flagged": [
+   "nachi_4_seq_014",
+   "nachi_4_seq_016",
+   "nachi_4_seq_018"
+  ],
+  "lost_part_flag": [
+   "nachi_4_seq_000",
+   "nachi_4_seq_001",
+   "nachi_4_seq_002",
+   "nachi_4_seq_003",
+   "nachi_4_seq_004",
+   "nachi_4_seq_005",
+   "nachi_4_seq_006",
+   "nachi_4_seq_007",
+   "nachi_4_seq_008",
+   "nachi_4_seq_009",
+   "nachi_4_seq_010",
+   "nachi_4_seq_012",
+   "nachi_4_seq_013",
+   "nachi_4_seq_014",
+   "nachi_4_seq_015",
+   "nachi_4_seq_016",
+   "nachi_4_seq_017",
+   "nachi_4_seq_018",
+   "nachi_4_seq_019"
+  ],
+  "ends_within_1s_v5style": [
+   488,
+   2941
+  ],
+  "ends_within_1s_at_rest": [
+   1025,
+   2941
+  ]
+ }
+}

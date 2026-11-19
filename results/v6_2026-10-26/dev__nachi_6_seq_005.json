@@ -1,0 +1,89 @@
+{
+ "name": "dev/nachi_6_seq_005",
+ "version": "v6",
+ "cfg": {
+  "grid_fps": 30.0,
+  "rates": [
+   2.0,
+   6.0,
+   30.0
+  ],
+  "fast_iou": 0.7,
+  "home_change": 0.1,
+  "home_near": 0.5,
+  "calm_s": 1.0,
+  "calm_fine_s": 0.0,
+  "stuck_s": 1.0,
+  "size_window_s": 5.0,
+  "end_pad_s": 1.5,
+  "rest_iou": 0.9,
+  "window_s": 120.0,
+  "dynamic": true,
+  "memory": true
+ },
+ "video": "nachi_6_seq_005.mp4",
+ "start_s": 0,
+ "frames_available": 2589,
+ "frames_processed": 222,
+ "base_rate_frames": 173,
+ "sam_embeddings": 222,
+ "sam_calls": 227,
+ "fast_time_share": 0.156,
+ "every_frame_time_share": 0.0,
+ "frames_by_level": [
+  149,
+  73,
+  0
+ ],
+ "triggers": {
+  "home": 27
+ },
+ "held_frames": 0,
+ "outline_area_pct_mean": 8.66,
+ "s_per_embedding": 0.042,
+ "runtime_s": 31.7,
+ "track_s": 24.8,
+ "flags": [],
+ "flag_info": {
+  "home_overlap_at_returns": [
+   0.971,
+   0.957,
+   0.96
+  ],
+  "autocorr_count": 3,
+  "held_share": 0.0
+ },
+ "stress": null,
+ "count": 3,
+ "count_window": 3,
+ "tau": 0.3003,
+ "returns_s": [
+  27.67,
+  56.5,
+  85.17
+ ],
+ "rest_end_s": [
+  28.67,
+  57.33,
+  86.17
+ ],
+ "true_cycles": 3,
+ "exact": true,
+ "obo": true,
+ "nmae": 0.0,
+ "window_exact": true,
+ "ends_v5style": {
+  "found": 0,
+  "of": 2,
+  "extra": 3,
+  "f1": 0.0,
+  "median_err_s": null
+ },
+ "ends_at_rest": {
+  "found": 2,
+  "of": 2,
+  "extra": 1,
+  "f1": 0.8,
+  "median_err_s": 0.15
+ }
+}

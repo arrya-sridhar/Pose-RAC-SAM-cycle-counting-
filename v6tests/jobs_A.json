@@ -1,0 +1,354 @@
+[
+ {
+  "name": "dev/nachi_1_seq_007",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_1_seq_007.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_1_seq_007.json",
+  "setup": {
+   "init_box": [
+    430.0,
+    180.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    753.8,
+    598.4
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_1_seq_007"
+ },
+ {
+  "name": "dev/nachi_2_seq_003",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_2_seq_003.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_2_seq_003.json",
+  "setup": {
+   "init_box": [
+    596.0,
+    156.0,
+    940.0,
+    719.0
+   ],
+   "base_point": [
+    822.6,
+    592.6
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_2_seq_003"
+ },
+ {
+  "name": "dev/nachi_3_seq_003",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_3_seq_003.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_3_seq_003.json",
+  "setup": {
+   "init_box": [
+    596.0,
+    156.0,
+    944.0,
+    719.0
+   ],
+   "base_point": [
+    823.3,
+    592.6
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_3_seq_003"
+ },
+ {
+  "name": "dev/nachi_4_seq_012",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_012.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_012.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_012"
+ },
+ {
+  "name": "dev/nachi_5_seq_019",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_5_seq_019.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_5_seq_019.json",
+  "setup": {
+   "init_box": [
+    600.0,
+    156.0,
+    944.0,
+    719.0
+   ],
+   "base_point": [
+    812.8,
+    592.1
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_5_seq_019"
+ },
+ {
+  "name": "dev/nachi_6_seq_005",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_6_seq_005.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_6_seq_005.json",
+  "setup": {
+   "init_box": [
+    636.0,
+    200.0,
+    984.0,
+    719.0
+   ],
+   "base_point": [
+    841.4,
+    601.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_6_seq_005"
+ },
+ {
+  "name": "dev/nachi_7_seq_008",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_7_seq_008.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_7_seq_008.json",
+  "setup": {
+   "init_box": [
+    636.0,
+    200.0,
+    976.0,
+    719.0
+   ],
+   "base_point": [
+    845.5,
+    601.8
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_7_seq_008"
+ },
+ {
+  "name": "dev/nachi_8_seq_005",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_8_seq_005.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_8_seq_005.json",
+  "setup": {
+   "init_box": [
+    640.0,
+    200.0,
+    984.0,
+    719.0
+   ],
+   "base_point": [
+    844.2,
+    601.6
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_8_seq_005"
+ },
+ {
+  "name": "dev/nachi_9_seq_006",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_9_seq_006.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_9_seq_006.json",
+  "setup": {
+   "init_box": [
+    760.0,
+    220.0,
+    985.0,
+    719.0
+   ],
+   "base_point": [
+    885.0,
+    590.0
+   ],
+   "init_frame": 14,
+   "note": "recording starts with a ~6 s fade-in from an empty cell; tracking and the reference frame start at t=7.0 s"
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_9_seq_006"
+ },
+ {
+  "name": "dev/nachi_10_seq_015",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_10_seq_015.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_10_seq_015.json",
+  "setup": {
+   "init_box": [
+    640.0,
+    210.0,
+    984.0,
+    719.0
+   ],
+   "base_point": [
+    858.1,
+    604.0
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_10_seq_015"
+ },
+ {
+  "name": "nachi4/nachi_4_seq_014",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_014.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_014.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_014"
+ },
+ {
+  "name": "nachi4/nachi_4_seq_016",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_016.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_016.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_016"
+ },
+ {
+  "name": "nachi4/nachi_4_seq_018",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_018.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_018.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_018"
+ },
+ {
+  "name": "stress/nachi_2_seq_003_memory_off",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_2_seq_003.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_2_seq_003.json",
+  "setup": {
+   "init_box": [
+    596.0,
+    156.0,
+    940.0,
+    719.0
+   ],
+   "base_point": [
+    822.6,
+    592.6
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_2_seq_003",
+  "stress": {
+   "t": 35.0
+  },
+  "cfg": {
+   "dynamic": false,
+   "memory": false
+  }
+ },
+ {
+  "name": "stress/nachi_2_seq_003_memory_on",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_2_seq_003.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_2_seq_003.json",
+  "setup": {
+   "init_box": [
+    596.0,
+    156.0,
+    940.0,
+    719.0
+   ],
+   "base_point": [
+    822.6,
+    592.6
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_2_seq_003",
+  "stress": {
+   "t": 35.0
+  },
+  "cfg": {
+   "dynamic": false,
+   "memory": true
+  }
+ },
+ {
+  "name": "stress/nachi_4_seq_012_memory_off",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_012.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_012.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_012",
+  "stress": {
+   "t": 35.0
+  },
+  "cfg": {
+   "dynamic": false,
+   "memory": false
+  }
+ },
+ {
+  "name": "stress/nachi_4_seq_012_memory_on",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_012.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_012.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_012",
+  "stress": {
+   "t": 35.0
+  },
+  "cfg": {
+   "dynamic": false,
+   "memory": true
+  }
+ }
+]

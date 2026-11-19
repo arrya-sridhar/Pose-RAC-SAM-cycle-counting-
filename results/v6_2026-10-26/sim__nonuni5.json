@@ -1,0 +1,96 @@
+{
+ "name": "sim/nonuni5",
+ "version": "v6",
+ "cfg": {
+  "grid_fps": 30.0,
+  "rates": [
+   2.0,
+   6.0,
+   30.0
+  ],
+  "fast_iou": 0.7,
+  "home_change": 0.1,
+  "home_near": 0.5,
+  "calm_s": 1.0,
+  "calm_fine_s": 0.0,
+  "stuck_s": 1.0,
+  "size_window_s": 5.0,
+  "end_pad_s": 1.5,
+  "rest_iou": 0.9,
+  "window_s": 120.0,
+  "dynamic": true,
+  "memory": true
+ },
+ "video": "nonuniform_5cycles_pattern[1.0,1.2,1.5].mp4",
+ "start_s": 0,
+ "frames_available": 778,
+ "frames_processed": 232,
+ "base_rate_frames": 52,
+ "sam_embeddings": 232,
+ "sam_calls": 245,
+ "fast_time_share": 0.953,
+ "every_frame_time_share": 0.185,
+ "frames_by_level": [
+  7,
+  115,
+  110
+ ],
+ "triggers": {
+  "fast": 124,
+  "home": 46
+ },
+ "held_frames": 0,
+ "outline_area_pct_mean": 1.94,
+ "s_per_embedding": 0.047,
+ "runtime_s": 29.3,
+ "track_s": 27.1,
+ "flags": [
+  "outline at home smaller than at the first return (overlap 0.77 vs 0.91): part of the robot may have been lost",
+  "count 4 disagrees with duration / repeat period (2, period 15.0 s): check by eye"
+ ],
+ "flag_info": {
+  "home_overlap_at_returns": [
+   0.911,
+   0.902,
+   0.91,
+   0.773
+  ],
+  "autocorr_count": 2,
+  "held_share": 0.0
+ },
+ "stress": null,
+ "count": 4,
+ "count_window": 4,
+ "tau": 0.6207,
+ "returns_s": [
+  6.0,
+  11.0,
+  15.03,
+  20.97
+ ],
+ "rest_end_s": [
+  9.33,
+  13.83,
+  18.83,
+  24.33
+ ],
+ "true_cycles": 5,
+ "exact": false,
+ "obo": true,
+ "nmae": 0.2,
+ "window_exact": false,
+ "ends_v5style": {
+  "found": 4,
+  "of": 4,
+  "extra": 0,
+  "f1": 1.0,
+  "median_err_s": 0.05
+ },
+ "ends_at_rest": {
+  "found": 0,
+  "of": 4,
+  "extra": 4,
+  "f1": 0.0,
+  "median_err_s": null
+ }
+}

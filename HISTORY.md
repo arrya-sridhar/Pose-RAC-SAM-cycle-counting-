@@ -31,9 +31,12 @@ Terms:
 | v2 | Only nearby motion widens the box; 6 candidates; continuity choice; size check | 5/6 (run on nachi_1–6 only) | – | – | `history/run_real_v2.py` |
 | v3 | Clean-up; static-region ("wall") check | 9/10 | – | – | `history/run_real_v3.py` |
 | v4 | "Changed" measured against the last accepted frame; looser size check | nachi_7 only: still wrong | – | – | `history/run_real_v4.py` |
-| **v5** | Recovery boxes after 1 s stuck; hold the last good outline | **10/10** | **9/9** | **98.5% (197)**, OBO 100%, MAE 0.002 | `src/run_real.py`, git tag `v5` |
+| v5 | Recovery boxes after 1 s stuck; hold the last good outline | 10/10 | 9/9 | 98.5% (197), OBO 100%, MAE 0.002 | `src/run_real.py`, git tag `v5` |
+| v6 | Dynamic frame rate (2 / 6 / 30 fps with look-back); set-up frame as a second memory | 10/10 | 9/9 | not re-run in full; the 3 v5 misses are now exact (Section 10) | `src/run_real.py` unchanged; v6 is `src/run_v6.py` (not released on its own; part of v6.1) |
+| **v6.1** | v6's tracker and counter, unchanged; videos decoded while running; per-cycle times; automatic setup; one command | same tracker as v6 | same tracker as v6 | **98.0% (196)**, OBO 99.5%, MAE 0.0068 (setup typed in); 200 non-uniform videos 93.5% (187) (Section 10) | `count_cycles.py`, `src/auto_setup.py`, `src/run_v6.py`, git tag `v6.1` |
 
-The counting stage (stage 2) is the same in v1–v5. Only the tracker (stage 1) changed between versions.
+The counting stage (stage 2) is the same in v1–v5. Only the tracker (stage 1) changed between versions. v6 changes which
+frames are looked at and adds the set-up memory to the tracker; the counting rule is unchanged (Section 10).
 
 To see exactly what changed between two versions: `diff history/run_real_v3.py history/run_real_v4.py`
 (v5 is `src/run_real.py` at tag `v5`).
@@ -280,7 +283,7 @@ Consequences to keep in mind:
 
 ---
 
-## 7. Proposed fixes, not yet tested
+## 7. Proposed fixes (all five tried in v6: 1, 3 adopted; 2, 4 measured, not adopted; 5 adopted in part. Section 10)
 
 **Rule: fixes must work for any robot.** They must not single out a body part, a colour or this camera, and must not
 be tuned to particular videos.
@@ -332,7 +335,8 @@ be tuned to particular videos.
    development data. Say so in the entry.
 4. **One change at a time,** or also test the parts separately, so each effect can be attributed.
 5. **Record negative results here too.** "Tried X, no effect" saves the next person a week.
-6. **Never move the `v5` tag.** New versions get new tags (`v6`, `v6.1`, ...) and an entry below.
+6. **Never move a published tag** (`v5`, `v6.1`). New versions get new tags (`v6.2`, `v7`, ...; rules in
+   `RELEASING.md`) and an entry below.
 7. **Cluster:**
    - work only in your own `$WORK` folder;
    - no heavy work on the login node (use SLURM);
@@ -409,6 +413,191 @@ Add new entries at the top of this section, using this template:
 - Side effects / what it broke:
 - Decision: kept (tag) / reverted
 ```
+
+### v6.1 – the 400-video run, the automatic setup and one command (Arrya, 30 Oct – 20 Nov 2026)
+Same tracker and counter as v6 and as the v6.1 entry below. This entry adds the full run and the two parts that make
+v6.1 fully automatic. Released as **v6.1** (tag `v6.1`, 20 Nov 2026) together with the entry below.
+
+- **400-video run** (lab cluster, 30 Oct; H200 GPUs, 2 jobs sharing one list; `v6tests/make_jobs_200.py`). The setup
+  was typed in per program from `hpc/job_setups.json`, as in v5's run. One exception: on the non-uniform set nachi_9 is
+  set up at frame 0 with a wider box, because those videos have no fade-in (reason in `make_jobs_200.py`). Tables:
+  `results/v6.1_2026-10-30/task1/` (the original 200) and `task2/` (200 non-uniform videos made on 25 Oct from the same
+  recordings: 4 profiles of 50, namely waits at home, waits + holds, waits + speed changes, and mixed).
+
+  | Set | Exact | Within one | MAE | Cycles counted / labelled | Cycle ends within 1 s (after the per-video shift) |
+  | --- | --- | --- | --- | --- | --- |
+  | Original 200 | 196/200 (v5: 197) | 199/200 (v5: 200) | 0.0068 (v5: 0.002) | 3,142 / 3,141 | 3,122 of 3,139 (99.5%) |
+  | Non-uniform 200 | 187/200 | 195/200 | 0.0101 | 3,166 / 3,184 | 3,156 of 3,164 (99.7%) |
+
+  - Original 200: v5's three nachi_4 misses are now exact, as the v6 tests predicted. Four videos v5 got right are now
+    missed: nachi_10_seq_014 (5 counted, 3 labelled), nachi_10_seq_015 (3 vs 2), nachi_9_seq_004 (21 vs 22),
+    nachi_9_seq_015 (6 vs 7). Their causes have not been looked into yet.
+  - Non-uniform 200: nachi_4 is 9/20 exact, every miss short by 1–4 cycles (the "nachi_4 counts wobble" warning in the
+    entry below, made worse by holds and speed changes). The other misses: nachi_10_nu08 (31 vs 30; the lost-part flag
+    fired) and nachi_9_nu20 (2 vs 1). Every other program is 19 or 20 out of 20.
+  - Start times: on the original 200 the labelled start of a cycle is the end of the previous one (the clips loop back
+    to back), so start errors include the robot's wait at home. Within 1 s after the shift: 2,307 of 3,139 starts
+    (original 200) and 2,108 of 3,164 (non-uniform).
+  - Compute: 8.0 and 8.1 GPU-hours for the two sets, about 0.29 s per second of video.
+- **Automatic setup** (`src/auto_setup.py`; first written on 2 Nov as `stage0_auto.py` to make the two demo videos):
+  - *Change:* the box around the robot, the click on its base and the home frame no longer have to be given. From the
+    first 120 s of the video: (1) a quick skim at 6 fps; (2) the biggest patch of pixels that keep changing is where the
+    robot works; (3) home = the first frame, or after a fade-in the first still frame where the robot is visible;
+    (4) a rough robot shape = the home frame against the typical "robot away" picture, inside that patch; (5) SAM ViT-B
+    prompted with that shape three ways (box + points, points only, box only), 3 answers each; of the answers that cover
+    at least 80% of the shape, the one with the best SAM score minus twice its share of wall-like pixels; (6) base point
+    = the lowest part of that outline that never moves during the skim; box = the outline's bounding box.
+  - *Why:* so that a new video needs nothing but the video.
+  - *General?* It assumes the robot is the biggest moving thing in view during the first 120 s and is at home (or
+    still) early on. Both hold on the NACHI videos; neither is guaranteed elsewhere.
+  - *Settings frozen before testing?* No separate test set: the constants were set while building it on nachi_1 (the
+    two demo videos), so those two videos are development data for it.
+  - *Tests:* 2 videos only, both from program nachi_1, with the full v6.1 counter: nachi_1_seq_000 9/9 and
+    nachi_1_nu05 7/7; every cycle end within 1 s of its label (median 0.23 s early), starts a median 0.27 s late.
+    Its box on nachi_1_seq_000 is [438, 188, 898, 638] against the typed-in [430, 180, 950, 719] (tighter; the
+    typed-in one reaches the bottom of the picture).
+  - *Not yet run* on the other 9 NACHI programs or on the 400 videos. Decided 20 Nov 2026 to release with this stated;
+    the full automatic run can be done later.
+  - *New simulated videos* (`gazebo_harshita`, one video of each kind, unchanged v6.1): right only on the plainest
+    (5/5) and one short on a static CCTV view (3/4); on the other kinds the setup or the count failed. The reasons
+    (several arms, people walking through, a moving camera, very short cycles and more) are the v6.2 work.
+  - *Known weak spots:* on NACHI the outline can take in the switch box on the wall right next to the robot (seen while
+    building it). A wrong setup shows in `setup.jpg`; the fix is to give the setup by hand (`count_cycles.py --setup`).
+  - *Packaging (20 Nov):* the same computations as `stage0_auto.py`, now a function that uses the repo's SAM weights
+    and picks CUDA, Apple Silicon or CPU, and stops with a clear message where the old script would crash (nothing
+    moving, no robot shape, empty outline). Checked: identical setup on nachi_1_seq_000.
+- **One command** (`count_cycles.py`, 20 Nov): takes videos and/or folders; for each video runs the automatic setup
+  (or takes one given by hand), draws `setup.jpg`, then runs the v6.1 counter (`run_v6.run_job`, unchanged) and writes
+  `setup.json`, `setup.jpg`, `result.json`, `cycles.csv`, `trace.npz`; with several videos also a summary. It
+  downloads and checks the SAM weights on first use, picks the device and loads SAM once for all videos.
+  *Check* (laptop, Apple GPU, 20 Nov): `python count_cycles.py nachi_1_seq_000.mp4 --labels ...` starting with no
+  weights (downloaded and checked: md5 matches). Same setup as on 2 Nov, 9/9 cycles, the same 540 frames processed, and
+  `cycles.csv` and every outline in `trace.npz` identical to the 2 Nov automatic run; 640 s for 202 s of video.
+  (Only the text layout of `setup.jpg` was changed after this run, and checked on its own.)
+- **Not changed:** `src/run_v6.py` (tracking, counting, timing) and `src/run_real.py` (v5).
+- **Decision:** released as v6.1 (tag `v6.1`, 20 Nov 2026). v6 was not released on its own; its code is part of v6.1.
+
+### v6.1 – videos decoded while running; a per-cycle time table (Arrya, 30 Oct 2026)
+- **Change** (`src/run_v6.py`; nothing in how frames are chosen, tracked or counted changes):
+  1. *Decoding while running.* v6 first wrote every 30 fps frame as a JPEG; for the 200 videos that is about 3 million
+     images (~300 GB). Now ffmpeg streams the frames (same filter and scaling, no JPEG compression) and only the last 48
+     are kept, more than the look-back ever needs (15). A first pass (every 15th frame) gives v5's motion envelope.
+     `"decode": "jpeg"` in a job keeps the old way.
+  2. *Per-cycle table* (`cycles.csv` per video; `v6tests/collect_cycles.py` combines them). For each cycle: start
+     (robot leaves home), end (back home), duration, wait at home, period (start to next start), frame numbers, v5's
+     threshold times, and the labelled cycle it matches. Departures come from the counter's own trigger
+     (`trigger_cycles` reproduces `poserac.count_official` step for step: same count on 3,000 random score sequences).
+     Start and end use the distance to the set-up outline: between the farthest point of one cycle and the departure of
+     the next, the robot is "home" while within 10% of the way from its closest approach to the farthest point; end =
+     first such frame, start = last.
+  3. `--shared`: several cluster jobs work through one list (each video is claimed first; a stopped job can be resubmitted).
+- **Why:** task 1 asks for start/end times of every cycle in the 200 videos; the frame pre-extraction made a 200-video
+  v6 run impractical.
+- **Tried and dropped for the table:** "at rest" = outline overlaps the one 0.5 s apart by ≥ 0.9 (v6's `rest_end_s`).
+  On nachi_4 the robot moves so slowly far from home that consecutive outlines also overlap by ~0.9, so ends came out
+  ~1.5 s early and starts landed at two different phases of an identical looped clip (spread 4.4 s). With the distance
+  rule every cycle of nachi_4_seq_016 has the same phase (leaves 0.5–0.7 s after each labelled boundary, back 1.3–1.4 s
+  before the next; period 24.5 s, clip 24.47 s). `rest_end_s` is still reported, unchanged.
+- **General?** Yes: no new assumption beyond v5's (the set-up frame shows the robot at home); the 10% band is relative
+  to each video's own distances.
+- **Labels:** on the original 200 the labelled cycles are the looped clip's boundaries, back to back. For nachi_4 the
+  boundary falls inside the robot's 2 s at home; for nachi_2 and nachi_8 it is ~12 s off. So label differences are
+  reported raw and after removing one constant per video (`shift_s`).
+- **Checks** (laptop, Apple GPU; `results/v6.1_2026-10-30/`):
+  - streamed vs the cluster's v6 run (JPEG frames, CUDA): nachi_4_seq_016 8/8, the same 398 frames and the same return
+    times; palletizing 12-cycle video 11/12 (as before; the last cycle ends with the video), identical return times,
+    582 vs 586 frames, 78% of the time at the fast rates with no frame missing from the look-back.
+  - the same video through the old JPEG path on the laptop gave **7/8**: during cycle 6 the outline kept only the base
+    column while the arm was away (124–145 s) and picked up a box on the wall, so the distance to home never rose. Not
+    caused by v6.1 (streaming on the same laptop gave 8/8), but it shows v6's nachi_4 fix is fragile: tiny pixel or
+    GPU-arithmetic differences decide 7 or 8 on this video (v5 also got 7/8). Expect nachi_4 counts to wobble by one.
+  - per-cycle times: exact on a synthetic robot (known times, 6 fps and 2 fps sampling, video ending mid-cycle);
+    nachi_4_seq_016: every cycle at the same phase, after removing the per-video shift (−1.3 s) ends within 0.08 s
+    median, 15/15 within 1 s (both runs); palletizing 12-cycle (never pauses): ends 0.21 s, starts 0.14 s from the
+    labels (median), all 11 within 0.5 s; the labels drift by 0.4 s over the video because they run to 78.68 s while
+    the file is 78.25 s long.
+  - decoding cost (laptop, 195 s of 1080p): 51 CPU-s for the streamed frames, 13 CPU-s for the first pass; on the
+    cluster's 4 CPUs this runs alongside SAM and stays below the GPU time.
+- **Decision:** kept. Released as v6.1 (tag `v6.1`, 20 Nov 2026) together with the 400-video run, the automatic setup
+  and the one-command entry point (entry above).
+
+### v6 – dynamic frame rate and the set-up frame as a second memory (Arrya, 26 Oct 2026)
+- **Change** (`src/run_v6.py`; v5's `src/run_real.py` is untouched):
+  1. *Dynamic frame rate.* Frames are prepared at 30 fps; SAM runs on every 15th (2 fps, exactly v5's frames) and
+     speeds up when, compared with the frame 0.5 s earlier, the outline changed a lot (overlap < 0.7), the robot is
+     arriving at or leaving home (distance to the set-up outline changed by > 0.1 while < 0.5), or no outline was
+     acceptable: then 6 fps. When the robot is moving fast *and* near home: every frame (30 fps), only while that
+     holds. On speeding up it goes back and processes the frames it skipped since the last one (look-back), so the
+     start of the movement is not missed. Back to 2 fps after 1 s without a trigger, on a frame v5 also uses.
+     Recovery (1 s stuck), the size-check window (5 s) and end padding (1.5 s) are now in seconds. The home score is
+     smoothed per processed frame as before; the Otsu cut-off is weighted by the time each frame stands for.
+  2. *Set-up memory.* Static-region check: a pixel inside the set-up outline that looks the same as in the set-up
+     frame (same 18-grey-level test as the motion check) is allowed back. The set-up box is always a candidate prompt.
+     Candidates are scored by max(overlap with last outline, overlap with set-up outline).
+  3. *Reported only (do not change the count):* warning flag "outline at home smaller than at the first return" and
+     "many held frames"; cycle end "at rest"; a count with a 120 s window cut-off.
+- **Why:** HISTORY 6.1 (nachi_4: base lost, never re-added) and 6.2 (robot that is home only briefly; OP75 robot
+  outrunning the box). The 30 fps check on the uniform palletizing video (v5 rules on every frame, first 18 s) counted
+  3/3: the start pose is visible for ~4–5 frames (0.15 s) per cycle at 30 fps but only 1 at 6 fps, hence the
+  every-frame level.
+- **General?** Yes. No body part, colour, camera or video is singled out. The set-up memory assumes only what v5
+  already assumes (fixed camera, set-up frame at home). New constants (0.7, 0.1, 0.5, 1 s) were set from first
+  principles before any v6 run (0.7: at 6 fps each step is then ~1/3 of the change, overlap ~0.9).
+- **Settings frozen before testing?** Yes. One change after the first runs: the repeat-period disagreement was demoted
+  from a flag to a reported number, because on the 200 it fired on 32 videos with correct counts (flags never change
+  the count).
+- **Tests run** (only what each change needs; cluster jobs 416296, 416297, 416311, 416299; H200 / RTX Pro 6000,
+  0.04–0.05 s per SAM image embedding):
+
+  | Test | v5 | v6 | v6 frames vs v5 |
+  | --- | --- | --- | --- |
+  | Regression: 10 development videos | 10/10 exact | 10/10 exact | 1.21× |
+  | Regression: 9 edited videos (rebuilt at 30 fps, same seed) | 9/9 | 9/9 | 1.16× |
+  | The 3 nachi_4 videos v5 got wrong (seq_014/016/018) | 8/9, 7/8, 9/10 | **9/9, 8/8, 10/10** | 1.05× |
+  | Simulated palletizing, 4 uneven videos (5, 6, 10, 12 cycles) | 1, 1, 1, 4 (OBO 0%) | **4, 5, 9, 11** (OBO 100%) | 4.0× |
+  | Simulated palletizing, uniform 40 cycles | 1 | **39** | 3.95× |
+  | OP75 robot B, 30 s from 12 s (no ground truth) | tracked ~6 s | tracked to ~14 s, lost by 20 s (as fixed 6 fps) | 2.77× |
+
+  - Simulated videos: every cycle whose return is visible is counted, and all 68 internal cycle ends are found
+    within 1 s. The one missing cycle in each is the last: the video ends at the end of a cycle, before the clip
+    jumps back to the start pose, so there is no return to see. NMAE (4 uneven): v5 0.800, v5.1 0.842, v6 0.138.
+  - Fixed 6 fps (v5.1) costs 3× and still fails these; fixed 30 fps would cost 15×.
+  - nachi_4: home overlap at every return stays 0.97–1.00 (v5: ~0.77 from the 2nd return; 0.44 during the 6th-return
+    dip, `results/v6_2026-10-26/nachi4_return6.jpg`). The lost-part flag no longer fires on these videos.
+  - *Ablation on the 3 nachi_4 videos:* set-up memory alone 9/9, 8/8, 10/10 (overlap 0.97–1.0). Dynamic rate alone
+    9/9, 8/8, **11/10** (overlap stays ~0.96, and the faster reaction in fast mode double-counts once). The memory is
+    the fix; the dynamic rate alone is not safe on a damaged outline.
+  - *Stress test* (lower third of the outline removed at 35 s, fixed 2 fps): without memory the home overlap at later
+    returns stays low on nachi_4_seq_012 (0.77, 0.75, 0.72) and on nachi_2_seq_003 recovers only at the last return
+    (0.82, 0.81, 0.97); with memory it is back at the next return (0.97–1.0, same as unstressed). Counts 4/4 either
+    way on these short videos.
+  - *Synthetic videos with exact outlines* (`v6tests/synth_nopause.py`, rendered at 30 fps, 4 seeds × 6 cycles each;
+    tests only which frames are looked at and the counting, not SAM). Exact videos and frames used:
+
+    | Robot | fixed 2 fps (v5) | fixed 6 fps | every frame | v6 |
+    | --- | --- | --- | --- | --- |
+    | never pauses at home | 0/4 (308) | 4/4 (920) | 4/4 (4,590) | 4/4 (1,736) |
+    | smooth loop through home | 4/4 (484) | 4/4 (1,450) | 4/4 (7,246) | 4/4 (1,024) |
+    | rests ~1.5 s at home | 4/4 (376) | 4/4 (1,124) | 4/4 (5,616) | 4/4 (1,958) |
+
+    v6 is right wherever any fixed rate is. Its cost depends on how fast the robot moves near home: the synthetic
+    robot moves fast, so v6 uses 2.1–5.6× v5's frames there (NACHI: 1.0–1.3×).
+- **Counting extras on all 200 videos** (from v5's stored outlines, `v6tests/recount_200.py`):
+  - v6's counter on evenly spaced frames reproduces v5's count on 200/200 videos;
+  - lost-part flag: fires on 19 of the 20 nachi_4 videos (all 3 misses) and on no other video;
+  - 120 s window cut-off: fixes the 3 nachi_4 misses but over-counts 5 nachi_8 videos by one (195/200): **not adopted**;
+  - cycle end "at rest": 1,025 of 2,941 labelled ends within 1 s, against 488 for v5's end time. Not adopted as the
+    default: on robots that never rest (palletizing) it is worse (3/68 vs 68/68). Both are reported.
+- **Regression check:** the 19 videos are all exact (same counts as v5). Cycle ends within 1 s: dev 3/15 (v5 2/15),
+  edited 14/24 (v5 15/24).
+- **200 videos:** not re-run with the tracker. A 30 fps frame grid for 27.7 h of video is ~3 M images; the full run
+  needs on-the-fly decoding first. Expected: the 3 misses fixed (shown above), the rest unchanged (19/19 and the
+  recount suggest so, but this is not a measured result).
+- **Side effects:** compute 1.0–1.3× v5 on NACHI-style videos, ~4× on robots that move fast all the time. The
+  every-frame level reacts within ~0.1 s, so a damaged outline can double count (ablation above).
+- **Decision:** kept as v6. Not released or tagged on its own (decided 20 Nov 2026): its code is part of the v6.1
+  release (tag `v6.1`), which also made the full 200-video run (v6.1 entries above).
+- Results: `results/v6_2026-10-26/`; jobs: `v6tests/`; cluster script `hpc/run_v6.sbatch`.
 
 ### v5.1 – v5 with frames sampled at 6 per second instead of 2 (Arrya, 14 Oct 2026)
 - **Change:** frame rate only (6 fps). Every rule is unchanged and still counted in frames, except the end padding,

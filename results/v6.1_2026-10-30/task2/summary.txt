@@ -1,0 +1,12 @@
+200 videos, 3166 cycle rows (0 incomplete)
+count exact 187/200, within one 195/200, counted 3166 of 3184 labelled cycles, NMAE 0.0101
+  nachi_1: exact 20/20, 327/327 cycles, shift -0.23 s, |end err| after shift 0.04 s (327/327 within 1 s)
+  nachi_10: exact 19/20, 314/313 cycles, shift -0.8 s, |end err| after shift 0.1 s (313/313 within 1 s)
+  nachi_2: exact 20/20, 289/289 cycles, shift -0.35 s, |end err| after shift 0.07 s (289/289 within 1 s)
+  nachi_3: exact 20/20, 299/299 cycles, shift -0.28 s, |end err| after shift 0.04 s (299/299 within 1 s)
+  nachi_4: exact 9/20, 346/366 cycles, shift -1.32 s, |end err| after shift 0.1 s (346/346 within 1 s)
+  nachi_5: exact 20/20, 335/335 cycles, shift -0.5 s, |end err| after shift 0.07 s (335/335 within 1 s)
+  nachi_6: exact 20/20, 339/339 cycles, shift -0.43 s, |end err| after shift 0.05 s (339/339 within 1 s)
+  nachi_7: exact 20/20, 300/300 cycles, shift -0.73 s, |end err| after shift 0.06 s (300/300 within 1 s)
+  nachi_8: exact 20/20, 317/317 cycles, shift 0.0 s, |end err| after shift 0.07 s (309/317 within 1 s)
+  nachi_9: exact 19/20, 300/299 cycles, shift -1.04 s, |end err| after shift 0.05 s (299/299 within 1 s)

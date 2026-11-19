@@ -1,0 +1,140 @@
+[
+ {
+  "name": "ablation/nachi_4_seq_014_memory_only",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_014.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_014.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_014",
+  "cfg": {
+   "dynamic": false,
+   "memory": true
+  }
+ },
+ {
+  "name": "ablation/nachi_4_seq_014_rate_only",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_014.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_014.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_014",
+  "cfg": {
+   "dynamic": true,
+   "memory": false
+  }
+ },
+ {
+  "name": "ablation/nachi_4_seq_016_memory_only",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_016.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_016.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_016",
+  "cfg": {
+   "dynamic": false,
+   "memory": true
+  }
+ },
+ {
+  "name": "ablation/nachi_4_seq_016_rate_only",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_016.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_016.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_016",
+  "cfg": {
+   "dynamic": true,
+   "memory": false
+  }
+ },
+ {
+  "name": "ablation/nachi_4_seq_018_memory_only",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_018.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_018.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_018",
+  "cfg": {
+   "dynamic": false,
+   "memory": true
+  }
+ },
+ {
+  "name": "ablation/nachi_4_seq_018_rate_only",
+  "video": "/home/psaxena/Harshitha/dataset_out/videos/nachi_4_seq_018.mp4",
+  "gt": "/home/psaxena/Harshitha/dataset_out/ground_truth/nachi_4_seq_018.json",
+  "setup": {
+   "init_box": [
+    720.0,
+    160.0,
+    950.0,
+    719.0
+   ],
+   "base_point": [
+    821.5,
+    593.5
+   ],
+   "init_frame": 0
+  },
+  "frames_root": "/scratch/psaxena/arrya_v6/frames/nachi_4_seq_018",
+  "cfg": {
+   "dynamic": true,
+   "memory": false
+  }
+ }
+]

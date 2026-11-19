@@ -1,0 +1,107 @@
+{
+ "name": "ablation/nachi_4_seq_014_memory_only",
+ "version": "v6",
+ "cfg": {
+  "grid_fps": 30.0,
+  "rates": [
+   2.0,
+   6.0,
+   30.0
+  ],
+  "fast_iou": 0.7,
+  "home_change": 0.1,
+  "home_near": 0.5,
+  "calm_s": 1.0,
+  "calm_fine_s": 0.0,
+  "stuck_s": 1.0,
+  "size_window_s": 5.0,
+  "end_pad_s": 1.5,
+  "rest_iou": 0.9,
+  "window_s": 120.0,
+  "dynamic": false,
+  "memory": true
+ },
+ "video": "nachi_4_seq_014.mp4",
+ "start_s": 0,
+ "frames_available": 6606,
+ "frames_processed": 441,
+ "base_rate_frames": 441,
+ "sam_embeddings": 441,
+ "sam_calls": 441,
+ "fast_time_share": 0.0,
+ "every_frame_time_share": 0.0,
+ "frames_by_level": [
+  441,
+  0,
+  0
+ ],
+ "triggers": {},
+ "held_frames": 0,
+ "outline_area_pct_mean": 9.66,
+ "s_per_embedding": 0.043,
+ "runtime_s": 51.6,
+ "track_s": 48.7,
+ "flags": [
+  "count 9 disagrees with duration / repeat period (2, period 98.0 s): check by eye"
+ ],
+ "flag_info": {
+  "home_overlap_at_returns": [
+   0.999,
+   0.998,
+   0.992,
+   0.99,
+   0.991,
+   0.99,
+   0.989,
+   0.988,
+   0.973
+  ],
+  "autocorr_count": 2,
+  "held_share": 0.0
+ },
+ "stress": null,
+ "count": 9,
+ "count_window": 9,
+ "tau": 0.3807,
+ "returns_s": [
+  22.0,
+  46.5,
+  71.0,
+  95.5,
+  120.5,
+  144.0,
+  168.5,
+  193.0,
+  218.5
+ ],
+ "rest_end_s": [
+  22.0,
+  46.5,
+  71.0,
+  95.5,
+  120.5,
+  145.0,
+  169.0,
+  193.5,
+  219.0
+ ],
+ "true_cycles": 9,
+ "exact": true,
+ "obo": true,
+ "nmae": 0.0,
+ "window_exact": true,
+ "ends_v5style": {
+  "found": 0,
+  "of": 8,
+  "extra": 9,
+  "f1": 0.0,
+  "median_err_s": null
+ },
+ "ends_at_rest": {
+  "found": 0,
+  "of": 8,
+  "extra": 9,
+  "f1": 0.0,
+  "median_err_s": null
+ }
+}

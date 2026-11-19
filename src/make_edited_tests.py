@@ -19,7 +19,7 @@ SRC = os.environ.get('NACHI_CLIPS', '/home/psaxena/Harshitha/nachi_robot_videos_
 OUT = sys.argv[1] if len(sys.argv) > 1 else '/scratch/psaxena/arrya_edited_test'
 JOBS = [1, 2, 3, 4, 5, 6, 7, 8, 10]
 SPEEDS = [0.8, 1.0, 1.25]
-STEP = 0.5                                   # 2 frames per second
+STEP = 1.0 / float(os.environ.get('EDIT_FPS', '2'))   # 2 frames per second (EDIT_FPS=30 for v6; same plan, same seed)
 rng = random.Random(20260925)
 
 os.makedirs(OUT, exist_ok=True)
@@ -77,7 +77,7 @@ for k in JOBS:
         shutil.copyfile(os.path.join(cache, f'{s:06d}.jpg'), os.path.join(fdir, f'{j + 1:06d}.jpg'))
     shutil.rmtree(cache)
     gt = dict(video_id=f'edit_{k}', source_clip=f'nachi_{k}.mp4', built_from='real clip, edited (speed changes + waits)',
-              fps=2.0, total_duration_sec=round(len(times) * STEP, 3), total_cycles=p['cycles'], cycles=cycles,
+              fps=round(1.0 / STEP, 3), total_duration_sec=round(len(times) * STEP, 3), total_cycles=p['cycles'], cycles=cycles,
               plan=p, clip_duration_s=round(D, 3))
     json.dump(gt, open(os.path.join(vdir, 'gt.json'), 'w'), indent=1)
     print(f'edit_{k}: {p["cycles"]} cycles, speeds {p["speeds"]}, waits {p["wait_after_each_cycle_s"]}, '

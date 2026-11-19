@@ -1,0 +1,248 @@
+{
+ "rows": [
+  {
+   "video": "nodwell_s900",
+   "true": 6,
+   "duration_s": 38.7,
+   "fixed_2fps_count": 1,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 78,
+   "fixed_6fps_frames": 233,
+   "fixed_30fps_frames": 1161,
+   "dynamic_frames": 441
+  },
+  {
+   "video": "nodwell_s901",
+   "true": 6,
+   "duration_s": 38.2,
+   "fixed_2fps_count": 2,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 77,
+   "fixed_6fps_frames": 230,
+   "fixed_30fps_frames": 1147,
+   "dynamic_frames": 430
+  },
+  {
+   "video": "nodwell_s902",
+   "true": 6,
+   "duration_s": 38.1,
+   "fixed_2fps_count": 3,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 77,
+   "fixed_6fps_frames": 229,
+   "fixed_30fps_frames": 1143,
+   "dynamic_frames": 437
+  },
+  {
+   "video": "nodwell_s903",
+   "true": 6,
+   "duration_s": 37.9,
+   "fixed_2fps_count": 3,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 76,
+   "fixed_6fps_frames": 228,
+   "fixed_30fps_frames": 1139,
+   "dynamic_frames": 428
+  },
+  {
+   "video": "continuous_s900",
+   "true": 6,
+   "duration_s": 58.7,
+   "fixed_2fps_count": 6,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 118,
+   "fixed_6fps_frames": 353,
+   "fixed_30fps_frames": 1763,
+   "dynamic_frames": 263
+  },
+  {
+   "video": "continuous_s901",
+   "true": 6,
+   "duration_s": 61.2,
+   "fixed_2fps_count": 6,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 123,
+   "fixed_6fps_frames": 368,
+   "fixed_30fps_frames": 1838,
+   "dynamic_frames": 258
+  },
+  {
+   "video": "continuous_s902",
+   "true": 6,
+   "duration_s": 60.5,
+   "fixed_2fps_count": 6,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 121,
+   "fixed_6fps_frames": 363,
+   "fixed_30fps_frames": 1815,
+   "dynamic_frames": 249
+  },
+  {
+   "video": "continuous_s903",
+   "true": 6,
+   "duration_s": 61.0,
+   "fixed_2fps_count": 6,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 122,
+   "fixed_6fps_frames": 366,
+   "fixed_30fps_frames": 1830,
+   "dynamic_frames": 254
+  },
+  {
+   "video": "normal_s900",
+   "true": 6,
+   "duration_s": 46.2,
+   "fixed_2fps_count": 6,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 93,
+   "fixed_6fps_frames": 278,
+   "fixed_30fps_frames": 1387,
+   "dynamic_frames": 474
+  },
+  {
+   "video": "normal_s901",
+   "true": 6,
+   "duration_s": 48.0,
+   "fixed_2fps_count": 6,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 96,
+   "fixed_6fps_frames": 288,
+   "fixed_30fps_frames": 1440,
+   "dynamic_frames": 468
+  },
+  {
+   "video": "normal_s902",
+   "true": 6,
+   "duration_s": 46.3,
+   "fixed_2fps_count": 6,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 93,
+   "fixed_6fps_frames": 278,
+   "fixed_30fps_frames": 1390,
+   "dynamic_frames": 520
+  },
+  {
+   "video": "normal_s903",
+   "true": 6,
+   "duration_s": 46.6,
+   "fixed_2fps_count": 6,
+   "fixed_6fps_count": 6,
+   "fixed_30fps_count": 6,
+   "dynamic_count": 6,
+   "fixed_2fps_frames": 94,
+   "fixed_6fps_frames": 280,
+   "fixed_30fps_frames": 1399,
+   "dynamic_frames": 496
+  }
+ ],
+ "summary": {
+  "nodwell": {
+   "fixed_2fps": {
+    "exact": 0,
+    "of": 4,
+    "frames": 308
+   },
+   "fixed_6fps": {
+    "exact": 4,
+    "of": 4,
+    "frames": 920
+   },
+   "fixed_30fps": {
+    "exact": 4,
+    "of": 4,
+    "frames": 4590
+   },
+   "dynamic": {
+    "exact": 4,
+    "of": 4,
+    "frames": 1736
+   }
+  },
+  "continuous": {
+   "fixed_2fps": {
+    "exact": 4,
+    "of": 4,
+    "frames": 484
+   },
+   "fixed_6fps": {
+    "exact": 4,
+    "of": 4,
+    "frames": 1450
+   },
+   "fixed_30fps": {
+    "exact": 4,
+    "of": 4,
+    "frames": 7246
+   },
+   "dynamic": {
+    "exact": 4,
+    "of": 4,
+    "frames": 1024
+   }
+  },
+  "normal": {
+   "fixed_2fps": {
+    "exact": 4,
+    "of": 4,
+    "frames": 376
+   },
+   "fixed_6fps": {
+    "exact": 4,
+    "of": 4,
+    "frames": 1124
+   },
+   "fixed_30fps": {
+    "exact": 4,
+    "of": 4,
+    "frames": 5616
+   },
+   "dynamic": {
+    "exact": 4,
+    "of": 4,
+    "frames": 1958
+   }
+  }
+ },
+ "cfg": {
+  "grid_fps": 30.0,
+  "rates": [
+   2.0,
+   6.0,
+   30.0
+  ],
+  "fast_iou": 0.7,
+  "home_change": 0.1,
+  "home_near": 0.5,
+  "calm_s": 1.0,
+  "calm_fine_s": 0.0,
+  "stuck_s": 1.0,
+  "size_window_s": 5.0,
+  "end_pad_s": 1.5,
+  "rest_iou": 0.9,
+  "window_s": 120.0,
+  "dynamic": true,
+  "memory": true
+ }
+}

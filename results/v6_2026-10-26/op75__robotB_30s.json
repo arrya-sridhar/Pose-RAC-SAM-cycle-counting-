@@ -1,0 +1,62 @@
+{
+ "name": "op75/robotB_30s",
+ "version": "v6",
+ "cfg": {
+  "grid_fps": 30.0,
+  "rates": [
+   2.0,
+   6.0,
+   30.0
+  ],
+  "fast_iou": 0.7,
+  "home_change": 0.1,
+  "home_near": 0.5,
+  "calm_s": 1.0,
+  "calm_fine_s": 0.0,
+  "stuck_s": 1.0,
+  "size_window_s": 5.0,
+  "end_pad_s": 1.5,
+  "rest_iou": 0.9,
+  "window_s": 120.0,
+  "dynamic": true,
+  "memory": true
+ },
+ "video": "OP75_ Trials Video 5.11.25 (1) (1).mp4",
+ "start_s": 12,
+ "frames_available": 900,
+ "frames_processed": 166,
+ "base_rate_frames": 60,
+ "sam_embeddings": 166,
+ "sam_calls": 173,
+ "fast_time_share": 0.599,
+ "every_frame_time_share": 0.064,
+ "frames_by_level": [
+  27,
+  89,
+  50
+ ],
+ "triggers": {
+  "fast": 61,
+  "home": 20,
+  "unsure": 12
+ },
+ "held_frames": 14,
+ "outline_area_pct_mean": 0.41,
+ "s_per_embedding": 0.047,
+ "runtime_s": 20.6,
+ "track_s": 17.7,
+ "flags": [
+  "8% of frames held (no acceptable outline): tracking unreliable"
+ ],
+ "flag_info": {
+  "home_overlap_at_returns": [],
+  "autocorr_count": 1,
+  "held_share": 0.0843
+ },
+ "stress": null,
+ "count": 0,
+ "count_window": 0,
+ "tau": 0.8047,
+ "returns_s": [],
+ "rest_end_s": []
+}

@@ -1,0 +1,4 @@
+3 videos, 27 cycle rows (1 incomplete)
+count exact 1/3, within one 3/3, counted 26 of 28 labelled cycles, NMAE 0.0694
+  nachi_4: exact 1/2, 15/16 cycles, shift -1.33 s, |end err| after shift 0.08 s (15/15 within 1 s)
+  pallet: exact 0/1, 11/12 cycles, shift -0.21 s, |end err| after shift 0.1 s (11/11 within 1 s)

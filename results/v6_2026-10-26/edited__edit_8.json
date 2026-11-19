@@ -1,0 +1,92 @@
+{
+ "name": "edited/edit_8",
+ "version": "v6",
+ "cfg": {
+  "grid_fps": 30.0,
+  "rates": [
+   2.0,
+   6.0,
+   30.0
+  ],
+  "fast_iou": 0.7,
+  "home_change": 0.1,
+  "home_near": 0.5,
+  "calm_s": 1.0,
+  "calm_fine_s": 0.0,
+  "stuck_s": 1.0,
+  "size_window_s": 5.0,
+  "end_pad_s": 1.5,
+  "rest_iou": 0.9,
+  "window_s": 120.0,
+  "dynamic": true,
+  "memory": true
+ },
+ "video": "frames",
+ "start_s": 0,
+ "frames_available": 4085,
+ "frames_processed": 343,
+ "base_rate_frames": 273,
+ "sam_embeddings": 343,
+ "sam_calls": 351,
+ "fast_time_share": 0.148,
+ "every_frame_time_share": 0.0,
+ "frames_by_level": [
+  238,
+  105,
+  0
+ ],
+ "triggers": {
+  "home": 33
+ },
+ "held_frames": 0,
+ "outline_area_pct_mean": 8.44,
+ "s_per_embedding": 0.046,
+ "runtime_s": 40.0,
+ "track_s": 38.9,
+ "flags": [],
+ "flag_info": {
+  "home_overlap_at_returns": [
+   0.9,
+   0.901,
+   0.9,
+   0.9
+  ],
+  "autocorr_count": 4,
+  "held_share": 0.0
+ },
+ "stress": null,
+ "count": 4,
+ "count_window": 4,
+ "tau": 0.3237,
+ "returns_s": [
+  27.5,
+  58.5,
+  96.67,
+  132.67
+ ],
+ "rest_end_s": [
+  28.17,
+  59.17,
+  97.33,
+  133.33
+ ],
+ "true_cycles": 4,
+ "exact": true,
+ "obo": true,
+ "nmae": 0.0,
+ "window_exact": true,
+ "ends_v5style": {
+  "found": 3,
+  "of": 3,
+  "extra": 1,
+  "f1": 0.857,
+  "median_err_s": 0.67
+ },
+ "ends_at_rest": {
+  "found": 3,
+  "of": 3,
+  "extra": 1,
+  "f1": 0.857,
+  "median_err_s": 0.04
+ }
+}

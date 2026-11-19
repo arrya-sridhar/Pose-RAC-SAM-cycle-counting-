@@ -1,0 +1,116 @@
+{
+ "name": "ablation/nachi_4_seq_018_rate_only",
+ "version": "v6",
+ "cfg": {
+  "grid_fps": 30.0,
+  "rates": [
+   2.0,
+   6.0,
+   30.0
+  ],
+  "fast_iou": 0.7,
+  "home_change": 0.1,
+  "home_near": 0.5,
+  "calm_s": 1.0,
+  "calm_fine_s": 0.0,
+  "stuck_s": 1.0,
+  "size_window_s": 5.0,
+  "end_pad_s": 1.5,
+  "rest_iou": 0.9,
+  "window_s": 120.0,
+  "dynamic": true,
+  "memory": false
+ },
+ "video": "nachi_4_seq_018.mp4",
+ "start_s": 0,
+ "frames_available": 7340,
+ "frames_processed": 556,
+ "base_rate_frames": 490,
+ "sam_embeddings": 556,
+ "sam_calls": 562,
+ "fast_time_share": 0.031,
+ "every_frame_time_share": 0.008,
+ "frames_by_level": [
+  477,
+  29,
+  50
+ ],
+ "triggers": {
+  "fast": 19,
+  "home": 22
+ },
+ "held_frames": 0,
+ "outline_area_pct_mean": 9.45,
+ "s_per_embedding": 0.042,
+ "runtime_s": 53.1,
+ "track_s": 52.2,
+ "flags": [
+  "outline at home smaller than at the first return (overlap 0.74 vs 0.96): part of the robot may have been lost"
+ ],
+ "flag_info": {
+  "home_overlap_at_returns": [
+   0.96,
+   0.961,
+   0.968,
+   0.967,
+   0.967,
+   0.967,
+   0.966,
+   0.968,
+   0.748,
+   0.74,
+   0.977
+  ],
+  "autocorr_count": 10,
+  "held_share": 0.0
+ },
+ "stress": null,
+ "count": 11,
+ "count_window": 11,
+ "tau": 0.411,
+ "returns_s": [
+  22.0,
+  46.5,
+  70.5,
+  95.0,
+  119.5,
+  144.0,
+  168.5,
+  193.0,
+  219.17,
+  220.83,
+  243.33
+ ],
+ "rest_end_s": [
+  23.0,
+  47.5,
+  71.0,
+  96.0,
+  120.5,
+  145.0,
+  170.0,
+  194.5,
+  220.0,
+  221.27,
+  244.0
+ ],
+ "true_cycles": 10,
+ "exact": false,
+ "obo": true,
+ "nmae": 0.1,
+ "window_exact": false,
+ "ends_v5style": {
+  "found": 1,
+  "of": 9,
+  "extra": 10,
+  "f1": 0.1,
+  "median_err_s": 0.63
+ },
+ "ends_at_rest": {
+  "found": 1,
+  "of": 9,
+  "extra": 10,
+  "f1": 0.1,
+  "median_err_s": 0.2
+ }
+}
