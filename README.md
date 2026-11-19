@@ -4,7 +4,9 @@ Counts the work cycles of an industrial robot arm (Nachi) filmed by a fixed came
 
 Each frame, [SAM](https://github.com/facebookresearch/segment-anything) (ViT-Base) outlines the robot, prompted by a box that follows the robot plus one click on its base. Each outline is compared with the robot's outline on the first frame (its home pose). The two-threshold trigger from [PoseRAC](https://github.com/MiracleDance/PoseRAC) then counts each home → away → home trip as one cycle. The pipeline also reports the time of each return home.
 
-The current version is **v5** (git tag `v5`).
+The current version is **v5** (git tag `v5`). Every version has release notes and files on the
+[Releases page](../../releases); what changed in each version is in [`CHANGELOG.md`](CHANGELOG.md), and how versions
+are numbered, kept apart and released is in [`RELEASING.md`](RELEASING.md).
 
 **Before changing anything, read [`HISTORY.md`](HISTORY.md).** It lists every version, what each change fixed or broke,
 what was tried and dropped, the known failures, and the fixes proposed but not yet tested. Before calling a change an
@@ -70,6 +72,8 @@ Version history (v1 to v5, with results and side effects): [`HISTORY.md`](HISTOR
 
 ```
 HISTORY.md              the truth sheet: versions, what was tried, known failures, proposed fixes, ground rules
+CHANGELOG.md            one short entry per version: date, what changed, headline results
+RELEASING.md            how versions are numbered, branched, tagged and released
 src/
   count_video.py        count cycles in any video (no ground truth needed)
   run_real.py           v5 pipeline + evaluation on folders of frames with ground truth
@@ -90,8 +94,11 @@ results/
   real_10_v5/           v5 on the 10 development videos: results, ground truth, outlines (used by the regression check)
   edited_9/             v5 on the 9 edited videos: results, ground truth, outlines (used by the regression check)
   dataset_200/          v5 on all 200 videos: metrics + per-video results
+  new_videos_2026-10-14/  v5 and v5.1 on the 14 Oct videos (simulated palletizing, OP75): one result file per run
+newtests/               v5.1 experiment on the 14 Oct videos (6 fps): script and job lists
 reports/                PDF reports (black on white)
 docs/figures/           figures used above and in HISTORY.md
+docs/releases/          release notes, one file per version (also the text of each GitHub release)
 ```
 
 ## Setup
@@ -163,8 +170,8 @@ bash hpc/setup_hpc.sh                                 # SAM weights, 3 small pac
 It uses the shared `krishna` conda environment read-only. Never install into a shared environment. `/scratch` is
 cleared after about 15 days: re-run the set-up if `$WORK` is gone, and copy results you want to keep into the repo.
 
-**Run the full 200-video dataset on SLURM.** Run from the repo folder. Start 1–3 jobs at most; they share the work and
-skip finished videos:
+**Run the full 200-video dataset on SLURM.** Run from the repo folder. Start 1–2 jobs at most (the account is shared with
+other people); they share the work and skip finished videos:
 
 ```bash
 sbatch -p <gpu partition> -o $WORK/logs/%x_%j.out --export=ALL,WORK=$WORK hpc/run_shard.sbatch queue.txt
